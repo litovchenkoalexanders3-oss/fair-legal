@@ -1,0 +1,313 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Fair — Privacy Policy</title>
+<style>
+  :root {
+    color-scheme: light dark;
+    --bg: #fafafa;
+    --text: #1a1a1a;
+    --muted: #5a5a5a;
+    --accent: #00A876;
+    --border: #e2e2e2;
+    --card: #ffffff;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --bg: #0b0b0d;
+      --text: #f2f2f2;
+      --muted: #a3a3a3;
+      --accent: #00F5A0;
+      --border: #262626;
+      --card: #151517;
+    }
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    background: var(--bg);
+    color: var(--text);
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    line-height: 1.6;
+  }
+  .wrap { max-width: 760px; margin: 0 auto; padding: 48px 20px 96px; }
+  header { margin-bottom: 40px; }
+  h1 { font-size: 30px; font-weight: 800; margin: 0 0 6px; letter-spacing: -0.5px; }
+  .updated { color: var(--muted); font-size: 14px; }
+  h2 { font-size: 21px; font-weight: 700; margin: 40px 0 12px; }
+  h3 { font-size: 16px; font-weight: 700; margin: 20px 0 6px; }
+  p, li { color: var(--text); font-size: 15.5px; }
+  ul { padding-left: 22px; }
+  a { color: var(--accent); }
+  .card {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 14px;
+    padding: 16px 18px;
+    margin: 16px 0;
+  }
+  .muted { color: var(--muted); }
+  table { width: 100%; border-collapse: collapse; margin: 12px 0; font-size: 14.5px; }
+  th, td { text-align: left; padding: 8px 10px; border-bottom: 1px solid var(--border); vertical-align: top; }
+  th { color: var(--muted); font-weight: 600; font-size: 13px; text-transform: uppercase; letter-spacing: 0.03em; }
+  .lang-toggle { display: flex; gap: 8px; margin-bottom: 8px; }
+  .lang-toggle a {
+    display: inline-block; padding: 6px 14px; border-radius: 999px; border: 1px solid var(--border);
+    text-decoration: none; font-size: 13px; font-weight: 600; color: var(--text);
+  }
+  hr { border: none; border-top: 1px solid var(--border); margin: 56px 0; }
+  section[lang="de"] { display: none; }
+  body.show-de section[lang="en"] { display: none; }
+  body.show-de section[lang="de"] { display: block; }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <div class="lang-toggle">
+    <a href="#en" onclick="document.body.classList.remove('show-de')">English</a>
+    <a href="#de" onclick="document.body.classList.add('show-de')">Deutsch</a>
+  </div>
+
+  <section lang="en">
+    <header>
+      <h1>Privacy Policy — Fair</h1>
+      <div class="updated">Last updated: September 25, 2026</div>
+    </header>
+
+    <p>Fair ("the App") is developed and operated by <strong>Alexander Litovchenko</strong>, an
+    individual developer based in Germany (Apple Developer Team ID: SFQY7V73AL). This policy
+    explains what data the App processes, why, and what choices you have. If you have any
+    questions, contact <a href="mailto:litovchenko.alexanders3@gmail.com">litovchenko.alexanders3@gmail.com</a>.</p>
+
+    <p>Fair has <strong>no user accounts, no login, and no registration</strong>. Groups are joined
+    using a short join code you share directly with the people in your group (e.g. a trip or shared
+    household) — the same trust model used by comparable expense-splitting apps. There is no
+    central user directory and no way for Fair, or anyone else, to look up "your" data without
+    already knowing a specific join code.</p>
+
+    <h2>1. Data stored only on your device</h2>
+    <p>The following never leaves your phone unless you explicitly enable syncing for a group (see
+    Section 2). It is stored locally and is permanently deleted if you uninstall the App or use the
+    in-app "Delete all data" option (Settings → Data):</p>
+    <ul>
+      <li>Your display name, profile photo, and payment link (PayPal.me / Wise / similar), if you set them</li>
+      <li>Personal budget entries, category limits, and recurring personal transactions you enter in the Budget tab</li>
+      <li>App preferences (theme, accent color, currency display, which changelog version you've seen)</li>
+    </ul>
+
+    <h2>2. Data stored for groups you choose to sync</h2>
+    <p>Fair can work entirely offline for a single device, or you can turn on syncing for a group so
+    everyone in it sees the same shared expenses in real time. If you do, the following is stored on
+    our backend (<a href="https://supabase.com" target="_blank" rel="noopener">Supabase</a>, an
+    infrastructure provider acting as our data processor) and is visible to anyone who has that
+    group's join code:</p>
+    <table>
+      <tr><th>Data</th><th>Purpose</th></tr>
+      <tr><td>Group name, currency, optional shared budget</td><td>Core group functionality</td></tr>
+      <tr><td>Group location (city/coordinates), only if you set one</td><td>Shows current weather for the group's trip — see Section 4</td></tr>
+      <tr><td>Member names, optional profile photo, optional payment link</td><td>Identify who owes/paid whom; let others pay you back directly</td></tr>
+      <tr><td>Push notification token</td><td>Notify you about new expenses and payment reminders — see Section 5</td></tr>
+      <tr><td>Expenses: description, amount, who paid, who owes what, category, date, optional note</td><td>Core expense-splitting functionality</td></tr>
+      <tr><td>Optional receipt photo per expense</td><td>Attach proof of purchase; may also be processed by AI to prefill the expense — see Section 3</td></tr>
+      <tr><td>Optional location per expense</td><td>Shows where an expense happened on a map, if you choose to add it</td></tr>
+    </table>
+    <p class="muted">Group photos and receipt photos are stored in a shared file bucket accessible
+    to anyone with the corresponding link (again, gated by knowledge of the group's join code, not
+    by a login).</p>
+
+    <h2>3. AI-assisted features (Anthropic)</h2>
+    <p>Two optional features send data to <a href="https://www.anthropic.com" target="_blank" rel="noopener">Anthropic</a>
+    (maker of Claude), a third-party AI provider based in the United States, strictly to generate a
+    result for you — never for advertising or profiling:</p>
+    <ul>
+      <li><strong>Receipt scanning</strong>: if you choose to scan a receipt, that photo is sent to
+      Anthropic's API to read the amount, date, and merchant name. The result is only a suggestion —
+      you review and confirm it before anything is saved.</li>
+      <li><strong>Trip summary</strong>: if you request an AI-written summary of a group's expenses,
+      the group's expense totals (not raw photos) are sent to generate that text.</li>
+    </ul>
+    <p>Because Anthropic is based outside the European Economic Area, this involves an international
+    data transfer, which Anthropic supports under its own data processing terms and standard
+    contractual clauses. Anthropic does not use data submitted via its API to train its models. Both
+    features are opt-in — Fair works fully without ever using either one.</p>
+
+    <h2>4. Weather and location lookups (Open-Meteo)</h2>
+    <p>If you set a location for a group or an expense, Fair sends the place name or coordinates to
+    <a href="https://open-meteo.com" target="_blank" rel="noopener">Open-Meteo</a>, a weather and
+    geocoding service, to look up the place and show current weather. No name, account, or other
+    identifying information is sent — only the location itself. Location permission on your device is
+    only used, with your consent, to suggest your current location when you choose to add one; Fair
+    never tracks your location in the background.</p>
+
+    <h2>5. Push notifications (Expo)</h2>
+    <p>If you allow notifications, your device's push token is stored (see Section 2) and used,
+    via Expo's push notification service, to notify you about new expenses in a synced group or a
+    payment reminder from another member. No notification content beyond what's needed for the
+    message itself (e.g. "New expense in [group]") is shared with Expo beyond the token.</p>
+
+    <h2>6. Currency conversion (Frankfurter.app)</h2>
+    <p>If an expense is entered in a different currency than the group's, Fair looks up the exchange
+    rate from <a href="https://frankfurter.app" target="_blank" rel="noopener">Frankfurter.app</a>, a
+    public exchange-rate service. Only the two currency codes are sent (e.g. "EUR" and "USD") — no
+    personal or expense data.</p>
+
+    <h2>7. Crash and error reporting (Sentry)</h2>
+    <p>Fair uses <a href="https://sentry.io" target="_blank" rel="noopener">Sentry</a> to catch
+    crashes and errors so they can be fixed. Sentry is explicitly configured to not collect
+    personally identifiable information (device identifiers, IP address truncation, and similar PII
+    are disabled in our configuration) — only technical diagnostic data (what code was running when
+    something went wrong).</p>
+
+    <h2>8. Your rights</h2>
+    <p>Since most of your data lives locally on your own device, you already control most of it
+    directly: edit or delete any expense, member, or group from within the App, or use "Delete all
+    data" in Settings to wipe everything stored locally. For data synced to a group, deleting the
+    relevant group, expense, or member from within the App removes it from our backend too. If you'd
+    like help removing specific data you can no longer access yourself (e.g. you left a group), or
+    have any other request regarding your data — including access, correction, or a full export
+    — contact <a href="mailto:litovchenko.alexanders3@gmail.com">litovchenko.alexanders3@gmail.com</a>
+    and it will be handled directly, as this is a one-person project rather than a large company with
+    a self-service portal. If you are in the European Economic Area, you also have the right to lodge
+    a complaint with your local data protection authority.</p>
+
+    <h2>9. Children</h2>
+    <p>Fair is not directed at children under 16, and does not knowingly collect data from them.</p>
+
+    <h2>10. Changes to this policy</h2>
+    <p>If this policy changes in a meaningful way, the "Last updated" date above will change, and
+    significant changes will be noted in the App's own in-app changelog.</p>
+
+    <h2>Contact</h2>
+    <p>Alexander Litovchenko — <a href="mailto:litovchenko.alexanders3@gmail.com">litovchenko.alexanders3@gmail.com</a></p>
+  </section>
+
+  <section lang="de">
+    <header>
+      <h1>Datenschutzerklärung — Fair</h1>
+      <div class="updated">Zuletzt aktualisiert: 25. September 2026</div>
+    </header>
+
+    <p>Fair ("die App") wird von <strong>Alexander Litovchenko</strong> entwickelt und betrieben,
+    einem Einzelentwickler mit Sitz in Deutschland (Apple Developer Team-ID: SFQY7V73AL). Diese
+    Erklärung beschreibt, welche Daten die App verarbeitet, warum, und welche Wahlmöglichkeiten du
+    hast. Bei Fragen: <a href="mailto:litovchenko.alexanders3@gmail.com">litovchenko.alexanders3@gmail.com</a>.</p>
+
+    <p>Fair hat <strong>keine Benutzerkonten, kein Login, keine Registrierung</strong>. Gruppen tritt
+    man über einen kurzen Beitrittscode bei, den du direkt mit den Leuten in deiner Gruppe teilst
+    (z. B. eine Reise oder ein gemeinsamer Haushalt) — das gleiche Vertrauensmodell wie bei
+    vergleichbaren Kostenteilungs-Apps. Es gibt kein zentrales Nutzerverzeichnis und keine Möglichkeit
+    für Fair oder sonst wen, "deine" Daten nachzuschlagen, ohne bereits einen konkreten Beitrittscode
+    zu kennen.</p>
+
+    <h2>1. Nur auf deinem Gerät gespeicherte Daten</h2>
+    <p>Folgendes verlässt dein Telefon nie, außer du aktivierst für eine Gruppe explizit die
+    Synchronisierung (siehe Abschnitt 2). Es wird lokal gespeichert und dauerhaft gelöscht, wenn du
+    die App deinstallierst oder "Alle Daten löschen" in den Einstellungen nutzt:</p>
+    <ul>
+      <li>Dein Anzeigename, Profilfoto und Zahlungslink (PayPal.me/Wise/ähnlich), falls gesetzt</li>
+      <li>Persönliche Budget-Einträge, Kategorie-Limits und wiederkehrende private Buchungen im Budget-Tab</li>
+      <li>App-Einstellungen (Design, Akzentfarbe, Währungsanzeige, gesehene Changelog-Version)</li>
+    </ul>
+
+    <h2>2. Daten für Gruppen, die du synchronisierst</h2>
+    <p>Fair funktioniert komplett offline auf einem einzelnen Gerät, oder du aktivierst die
+    Synchronisierung für eine Gruppe, damit alle Mitglieder dieselben Ausgaben in Echtzeit sehen.
+    Falls du das tust, wird Folgendes auf unserem Backend
+    (<a href="https://supabase.com" target="_blank" rel="noopener">Supabase</a>, ein
+    Infrastruktur-Anbieter als unser Auftragsverarbeiter) gespeichert und ist für jeden sichtbar, der
+    den Beitrittscode der Gruppe kennt:</p>
+    <table>
+      <tr><th>Daten</th><th>Zweck</th></tr>
+      <tr><td>Gruppenname, Währung, optionales gemeinsames Budget</td><td>Kernfunktion der Gruppe</td></tr>
+      <tr><td>Gruppen-Standort (Ort/Koordinaten), nur falls gesetzt</td><td>Zeigt aktuelles Wetter für die Reise der Gruppe — siehe Abschnitt 4</td></tr>
+      <tr><td>Mitgliedernamen, optionales Profilfoto, optionaler Zahlungslink</td><td>Zeigt, wer wem was schuldet; ermöglicht direkte Rückzahlung</td></tr>
+      <tr><td>Push-Benachrichtigungs-Token</td><td>Benachrichtigung bei neuen Ausgaben und Zahlungserinnerungen — siehe Abschnitt 5</td></tr>
+      <tr><td>Ausgaben: Beschreibung, Betrag, wer bezahlt hat, wer was schuldet, Kategorie, Datum, optionale Notiz</td><td>Kernfunktion der Ausgabenteilung</td></tr>
+      <tr><td>Optionales Beleg-Foto pro Ausgabe</td><td>Kaufbeleg anhängen; kann zusätzlich per KI ausgelesen werden — siehe Abschnitt 3</td></tr>
+      <tr><td>Optionaler Standort pro Ausgabe</td><td>Zeigt auf einer Karte, wo eine Ausgabe stattfand, falls hinzugefügt</td></tr>
+    </table>
+    <p class="muted">Gruppenbilder und Beleg-Fotos werden in einem gemeinsamen Speicherbereich
+    abgelegt, der über den zugehörigen Link erreichbar ist (auch hier: Zugriff über Kenntnis des
+    Beitrittscodes, nicht über ein Login).</p>
+
+    <h2>3. KI-gestützte Funktionen (Anthropic)</h2>
+    <p>Zwei optionale Funktionen senden Daten an <a href="https://www.anthropic.com" target="_blank" rel="noopener">Anthropic</a>
+    (Hersteller von Claude), einen KI-Anbieter mit Sitz in den USA — ausschließlich um ein Ergebnis
+    für dich zu erzeugen, nie für Werbung oder Profilbildung:</p>
+    <ul>
+      <li><strong>Beleg-Scan</strong>: wenn du einen Beleg scannst, wird dieses Foto an Anthropics
+      API gesendet, um Betrag, Datum und Händlernamen auszulesen. Das Ergebnis ist nur ein Vorschlag
+      — du prüfst und bestätigst ihn, bevor etwas gespeichert wird.</li>
+      <li><strong>Reisezusammenfassung</strong>: wenn du eine KI-Zusammenfassung der Gruppenausgaben
+      anforderst, werden die Ausgaben-Summen der Gruppe (keine rohen Fotos) gesendet, um diesen Text
+      zu erzeugen.</li>
+    </ul>
+    <p>Da Anthropic außerhalb des Europäischen Wirtschaftsraums sitzt, handelt es sich um eine
+    internationale Datenübermittlung, die Anthropic über eigene Auftragsverarbeitungsbedingungen und
+    Standardvertragsklauseln absichert. Anthropic nutzt über die API gesendete Daten nicht zum
+    Training seiner Modelle. Beide Funktionen sind optional — Fair funktioniert vollständig auch ohne
+    sie.</p>
+
+    <h2>4. Wetter- und Standortabfragen (Open-Meteo)</h2>
+    <p>Wenn du einen Standort für eine Gruppe oder eine Ausgabe festlegst, sendet Fair den Ortsnamen
+    oder die Koordinaten an <a href="https://open-meteo.com" target="_blank" rel="noopener">Open-Meteo</a>,
+    einen Wetter- und Geokodierungsdienst, um den Ort nachzuschlagen und das aktuelle Wetter zu
+    zeigen. Es werden keine Namen, Konten oder sonstige identifizierende Informationen gesendet — nur
+    der Standort selbst. Die Standort-Berechtigung deines Geräts wird nur, mit deiner Zustimmung,
+    genutzt, um deinen aktuellen Standort vorzuschlagen, wenn du einen hinzufügen möchtest; Fair
+    verfolgt deinen Standort niemals im Hintergrund.</p>
+
+    <h2>5. Push-Benachrichtigungen (Expo)</h2>
+    <p>Falls du Benachrichtigungen erlaubst, wird der Push-Token deines Geräts gespeichert (siehe
+    Abschnitt 2) und über Expos Push-Benachrichtigungsdienst genutzt, um dich über neue Ausgaben in
+    einer synchronisierten Gruppe oder eine Zahlungserinnerung eines anderen Mitglieds zu
+    benachrichtigen. Es werden keine Inhalte über das für die Nachricht selbst Nötige hinaus
+    (z. B. "Neue Ausgabe in [Gruppe]") an Expo weitergegeben, außer dem Token.</p>
+
+    <h2>6. Währungsumrechnung (Frankfurter.app)</h2>
+    <p>Wird eine Ausgabe in einer anderen Währung als der Gruppenwährung eingetragen, fragt Fair den
+    Wechselkurs bei <a href="https://frankfurter.app" target="_blank" rel="noopener">Frankfurter.app</a>
+    ab, einem öffentlichen Wechselkurs-Dienst. Es werden nur die beiden Währungscodes gesendet
+    (z. B. "EUR" und "USD") — keine persönlichen Daten oder Ausgabendaten.</p>
+
+    <h2>7. Absturz- und Fehlerberichte (Sentry)</h2>
+    <p>Fair nutzt <a href="https://sentry.io" target="_blank" rel="noopener">Sentry</a>, um Abstürze
+    und Fehler zu erfassen, damit sie behoben werden können. Sentry ist ausdrücklich so konfiguriert,
+    dass keine personenbezogenen Daten erfasst werden (Geräte-Kennungen, IP-Adressen und Ähnliches
+    sind in unserer Konfiguration deaktiviert) — nur technische Diagnosedaten (welcher Code lief, als
+    etwas schiefging).</p>
+
+    <h2>8. Deine Rechte</h2>
+    <p>Da die meisten deiner Daten lokal auf deinem eigenen Gerät liegen, kontrollierst du das
+    meiste bereits direkt: bearbeite oder lösche jede Ausgabe, jedes Mitglied oder jede Gruppe direkt
+    in der App, oder nutze "Alle Daten löschen" in den Einstellungen, um alles lokal Gespeicherte zu
+    entfernen. Für synchronisierte Gruppendaten entfernt das Löschen der jeweiligen Gruppe, Ausgabe
+    oder des Mitglieds in der App diese auch von unserem Backend. Falls du Hilfe beim Entfernen
+    bestimmter Daten brauchst, auf die du selbst keinen Zugriff mehr hast (z. B. weil du eine Gruppe
+    verlassen hast), oder ein anderes Anliegen zu deinen Daten hast — inklusive Auskunft, Berichtigung
+    oder eine vollständige Kopie deiner Daten — wende dich an
+    <a href="mailto:litovchenko.alexanders3@gmail.com">litovchenko.alexanders3@gmail.com</a>; das wird
+    direkt bearbeitet, da dies ein Ein-Personen-Projekt ist und kein großes Unternehmen mit
+    Selbstbedienungsportal. Wenn du dich im Europäischen Wirtschaftsraum befindest, hast du außerdem
+    das Recht, dich bei deiner örtlichen Datenschutzbehörde zu beschweren.</p>
+
+    <h2>9. Kinder</h2>
+    <p>Fair richtet sich nicht an Kinder unter 16 Jahren und sammelt wissentlich keine Daten von
+    ihnen.</p>
+
+    <h2>10. Änderungen dieser Erklärung</h2>
+    <p>Falls sich diese Erklärung wesentlich ändert, ändert sich das Datum "Zuletzt aktualisiert"
+    oben, und wesentliche Änderungen werden im Changelog der App vermerkt.</p>
+
+    <h2>Kontakt</h2>
+    <p>Alexander Litovchenko — <a href="mailto:litovchenko.alexanders3@gmail.com">litovchenko.alexanders3@gmail.com</a></p>
+  </section>
+
+  <hr>
+  <p class="muted" style="font-size: 13px;">This page is the Privacy Policy for the "Fair" iOS app (bundle ID com.alexanderlitovchenko.fair).</p>
+</div>
+</body>
+</html>
