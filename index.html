@@ -52,23 +52,35 @@
   table { width: 100%; border-collapse: collapse; margin: 12px 0; font-size: 14.5px; }
   th, td { text-align: left; padding: 8px 10px; border-bottom: 1px solid var(--border); vertical-align: top; }
   th { color: var(--muted); font-weight: 600; font-size: 13px; text-transform: uppercase; letter-spacing: 0.03em; }
-  .lang-toggle { display: flex; gap: 8px; margin-bottom: 8px; }
-  .lang-toggle a {
-    display: inline-block; padding: 6px 14px; border-radius: 999px; border: 1px solid var(--border);
-    text-decoration: none; font-size: 13px; font-weight: 600; color: var(--text);
-  }
   hr { border: none; border-top: 1px solid var(--border); margin: 56px 0; }
-  section[lang="de"] { display: none; }
-  body.show-de section[lang="en"] { display: none; }
-  body.show-de section[lang="de"] { display: block; }
+  .lang-pick { display: flex; justify-content: flex-end; margin-bottom: 8px; }
+  .lang-pick select {
+    font: inherit; font-size: 14px; font-weight: 600; color: var(--text); background: var(--card);
+    border: 1px solid var(--border); border-radius: 999px; padding: 6px 14px; max-width: 100%;
+  }
+  section[lang] { display: none; }
+  section[lang].active { display: block; }
 </style>
 </head>
 <body>
 <div class="wrap">
 
-  <div class="lang-toggle">
-    <a href="#en" onclick="document.body.classList.remove('show-de')">English</a>
-    <a href="#de" onclick="document.body.classList.add('show-de')">Deutsch</a>
+  <div class="lang-pick">
+    <select id="lang" aria-label="Language">
+      <option value="en">English</option>
+      <option value="de">Deutsch</option>
+      <option value="fr">Français</option>
+      <option value="es">Español</option>
+      <option value="it">Italiano</option>
+      <option value="pt">Português</option>
+      <option value="nl">Nederlands</option>
+      <option value="pl">Polski</option>
+      <option value="cs">Čeština</option>
+      <option value="sv">Svenska</option>
+      <option value="da">Dansk</option>
+      <option value="nb">Norsk bokmål</option>
+      <option value="fi">Suomi</option>
+    </select>
   </div>
 
   <section lang="en">
@@ -351,8 +363,1611 @@
     <p>Alexander Litovchenko — <a href="mailto:litovchenko.alexanders3@gmail.com">litovchenko.alexanders3@gmail.com</a></p>
   </section>
 
+  <section lang="fr">
+    <header>
+      <h1>Politique de confidentialité — Fair</h1>
+      <div class="updated">Dernière mise à jour : 27 octobre 2026</div>
+    </header>
+    <p class="muted">Ceci est une traduction. En cas de divergence entre les versions, la version allemande fait foi.</p>
+
+    <p>Fair (« l’App ») est développée et exploitée par <strong>Alexander Litovchenko</strong>, un
+    développeur indépendant établi en Allemagne (Apple Developer Team ID : SFQY7V73AL), qui est le
+    responsable du traitement des données décrites ici. Cette politique explique quelles données l’App
+    traite, pourquoi, et quels choix vous avez. Pour toute question, écrivez à
+    <a href="mailto:litovchenko.alexanders3@gmail.com">litovchenko.alexanders3@gmail.com</a>.</p>
+
+    <p>Fair n’a <strong>ni comptes utilisateur, ni mots de passe, ni inscription</strong>. Lorsque l’App
+    se connecte pour la première fois à notre serveur, elle crée un <strong>identifiant technique
+    anonyme</strong> pour votre appareil. Cet identifiant n’est lié ni à votre nom, ni à votre adresse
+    e-mail, ni à votre numéro de téléphone ; il sert uniquement à déterminer quels groupes partagés cet
+    appareil peut ouvrir et à limiter les abus (voir les sections ci-dessous).</p>
+
+    <h2>1. Données stockées uniquement sur votre appareil</h2>
+    <p>Les données suivantes restent sur votre téléphone. Elles sont définitivement supprimées si vous
+    désinstallez l’App ou utilisez « Effacer toutes les données » dans les Réglages :</p>
+    <ul>
+      <li>Entrées de budget personnel, limites par catégorie, revenus et transactions personnelles récurrentes (onglet Budget)</li>
+      <li>Préférences de l’App (langue, thème, couleur d’accent, affichage des devises, dernière version des Nouveautés que vous avez vue)</li>
+      <li>Les groupes pour lesquels vous n’avez jamais activé la synchronisation, avec toutes leurs dépenses</li>
+    </ul>
+    <p>Votre nom affiché, votre photo de profil et vos moyens de paiement sont également stockés sur votre
+    appareil. Si vous êtes membre d’un groupe synchronisé, ils sont copiés dans votre fiche de membre de
+    ce groupe (voir la section 2).</p>
+
+    <h2>2. Données des groupes que vous choisissez de synchroniser</h2>
+    <p>Vous pouvez activer la synchronisation d’un groupe pour que tous ses membres voient les mêmes
+    dépenses. Les données sont alors stockées chez notre hébergeur,
+    <a href="https://supabase.com" target="_blank" rel="noopener">Supabase</a>, qui agit en tant que
+    sous-traitant ; les serveurs se trouvent à Londres (Royaume-Uni, pays bénéficiant d’une décision
+    d’adéquation de l’UE). Seuls les appareils qui ont <strong>rejoint le groupe</strong> avec son code
+    ou son lien d’invitation peuvent le lire ou le modifier ; connaître le code permet seulement de voir,
+    avant de rejoindre le groupe, son nom et son nombre de membres. Après 20 codes erronés en une heure,
+    les nouvelles tentatives sont bloquées pendant un certain temps.</p>
+    <table>
+      <tr><th>Données</th><th>Finalité</th></tr>
+      <tr><td>Nom du groupe, devise, budget facultatif, paramètres facultatifs de voyage d’affaires</td><td>Fonctionnement de base du groupe</td></tr>
+      <tr><td>Lieu du groupe (nom du lieu et coordonnées), uniquement si vous en définissez un</td><td>Affiche la météo du voyage — voir la section 4</td></tr>
+      <tr><td>Noms des membres, photo de profil facultative</td><td>Montrer qui a payé et qui doit combien à qui</td></tr>
+      <tr><td>Moyens de paiement facultatifs d’un membre : liens de paiement (p. ex. PayPal, Revolut, Wise), IBAN ou numéro de téléphone pour une app de paiement (p. ex. Bizum, MB WAY, BLIK, Swish, Vipps, MobilePay)</td><td>Permettre aux autres membres du groupe de vous rembourser directement</td></tr>
+      <tr><td>Jeton de notification push et langue de l’App d’un membre</td><td>Vous notifier dans votre langue — voir la section 5</td></tr>
+      <tr><td>Dépenses : description, montant, qui a payé, qui doit combien, catégorie, date, note facultative, lieu et coordonnées facultatifs</td><td>Fonctionnement de base du partage des dépenses</td></tr>
+      <tr><td>Photo de justificatif facultative pour chaque dépense, photo de couverture du groupe</td><td>Preuve d’achat, image du groupe ; un justificatif peut aussi être lu par une IA — voir la section 3</td></tr>
+      <tr><td>Rappels de paiement (qui a relancé qui, montant, heure)</td><td>Envoyer la notification de rappel</td></tr>
+      <tr><td>L’identifiant anonyme de chaque appareil ayant rejoint le groupe, et la date de sa dernière utilisation</td><td>Déterminer quels appareils peuvent ouvrir le groupe</td></tr>
+    </table>
+    <p>Les photos sont stockées sous un lien web long et impossible à deviner. Toute personne disposant
+    de ce lien exact peut ouvrir la photo ; ne partagez donc ces liens qu’avec des personnes de confiance.</p>
+
+    <h2>3. Fonctions assistées par IA (Anthropic)</h2>
+    <p>Deux fonctions facultatives envoient des données à <a href="https://www.anthropic.com" target="_blank" rel="noopener">Anthropic</a>
+    (éditeur de Claude), un fournisseur d’IA établi aux États-Unis, uniquement pour vous fournir un
+    résultat — jamais à des fins de publicité ou de profilage :</p>
+    <ul>
+      <li><strong>Scan de justificatif :</strong> la photo que vous choisissez est envoyée pour lire le
+      montant, la date et le nom du commerce. Le résultat n’est qu’une suggestion que vous vérifiez avant
+      d’enregistrer.</li>
+      <li><strong>Résumé du voyage :</strong> le nom du groupe, les totaux, le nombre de jours et de
+      dépenses, la catégorie la plus importante, le nom et le montant de la personne qui a le plus payé,
+      ainsi que la description et le montant de la dépense la plus élevée sont envoyés pour rédiger un
+      court résumé. Aucune photo n’est envoyée.</li>
+    </ul>
+    <p>Ces deux fonctions sont facultatives ; Fair fonctionne entièrement sans elles. Pour éviter les
+    abus, le nombre d’utilisations par jour est compté par identifiant anonyme d’appareil (ou, à défaut,
+    par adresse IP). Cela implique un transfert vers les États-Unis, encadré par les conditions de
+    traitement des données d’Anthropic, qui incluent les clauses contractuelles types de l’UE. Anthropic
+    n’utilise pas les données envoyées via son API pour entraîner ses modèles.</p>
+
+    <h2>4. Météo, cartes et lieux</h2>
+    <p>Si vous définissez un lieu pour un groupe ou une dépense, Fair envoie le nom du lieu que vous
+    saisissez, ou les coordonnées, à <a href="https://open-meteo.com" target="_blank" rel="noopener">Open-Meteo</a>
+    pour trouver le lieu et afficher la météo actuelle. La recherche d’un lieu à partir de votre position
+    actuelle et l’affichage des dépenses sur une carte utilisent les services de localisation et de
+    cartes d’Apple sur votre iPhone. L’accès à la localisation n’est utilisé, avec votre autorisation,
+    que lorsque vous ajoutez vous-même un lieu ; Fair ne suit jamais votre position en arrière-plan.</p>
+
+    <h2>5. Notifications push (Expo)</h2>
+    <p>Si vous autorisez les notifications, le jeton push de votre appareil est stocké (voir la section 2)
+    et utilisé, via le service push d’Expo et le service de notifications d’Apple, pour vous informer des
+    nouvelles dépenses et des rappels de paiement dans un groupe synchronisé. Pour qu’une notification
+    puisse être délivrée, son texte est transmis à ces services : le nom du groupe, le nom de la personne
+    qui a payé ou envoyé le rappel, la description de la dépense et le montant.</p>
+
+    <h2>6. Conversion de devises (Frankfurter)</h2>
+    <p>Si une dépense est dans une autre devise que celle du groupe, Fair récupère le taux de change auprès
+    de <a href="https://frankfurter.app" target="_blank" rel="noopener">Frankfurter</a>, un service public
+    de taux de change. Seuls les deux codes de devise sont envoyés (p. ex. « EUR » et « USD »).</p>
+
+    <h2>7. Rapports de plantage et d’erreur (Sentry)</h2>
+    <p>Fair utilise <a href="https://sentry.io" target="_blank" rel="noopener">Sentry</a> pour détecter
+    les plantages et les erreurs afin de pouvoir les corriger. Le service est configuré pour ne pas
+    envoyer de données à caractère personnel : aucun identifiant utilisateur, aucune donnée personnelle
+    par défaut ; les IBAN, adresses e-mail et codes d’invitation sont masqués avant l’envoi d’un rapport.
+    Un rapport contient des informations techniques, comme le code en cours d’exécution et le modèle
+    de l’appareil.</p>
+
+    <h2>8. Statistiques de langue et suggestions de traduction</h2>
+    <p>Pour vérifier que chaque langue de l’App fonctionne bien, Fair compte quelques événements anonymes
+    par langue, par exemple « prise en main terminée » ou « passage à l’anglais ». Seuls le jour, la
+    langue, l’événement et un nombre sont stockés — aucun utilisateur, appareil ou groupe. Si vous
+    utilisez <strong>Réglages → Langue → Improve Translation</strong>, Fair envoie la langue, le texte
+    que vous avez choisi, votre suggestion et votre note facultative, avec l’identifiant anonyme de
+    l’appareil (uniquement pour compter combien de personnes différentes proposent la même modification
+    et pour limiter les abus). Les suggestions sont supprimées au plus tard après 180 jours.</p>
+
+    <h2>9. Durée de conservation des données</h2>
+    <ul>
+      <li>Données sur votre appareil : jusqu’à ce que vous les supprimiez, utilisiez « Effacer toutes les
+      données » ou désinstalliez l’App.</li>
+      <li>Données des groupes synchronisés : tant que le groupe existe. Supprimer le groupe dans l’App
+      efface de notre serveur le groupe, ses membres, ses dépenses et ses rappels. Les photos restent
+      accessibles par leur lien jusqu’à ce que nous les supprimions ; demandez-le-nous et nous le ferons.</li>
+      <li>Quitter un groupe supprime l’accès de votre appareil et votre jeton push ; votre fiche de membre
+      (nom, photo, moyens de paiement) reste dans le groupe afin que les soldes des autres restent
+      corrects. Écrivez-nous si vous souhaitez qu’elle soit supprimée ou anonymisée.</li>
+      <li>« Effacer toutes les données » dans les Réglages supprime les données <strong>sur votre
+      appareil</strong>. Cela ne supprime pas encore vos fiches de membre dans les groupes synchronisés sur
+      notre serveur ; écrivez-nous et nous les supprimerons.</li>
+      <li>La liste des codes d’invitation erronés est supprimée automatiquement après un jour, les
+      compteurs quotidiens d’utilisation de l’IA après 30 jours, les suggestions de traduction après
+      180 jours.</li>
+    </ul>
+
+    <h2>10. Vos droits</h2>
+    <p>Vous disposez d’un droit d’accès, de rectification, d’effacement, de limitation du traitement et
+    de portabilité de vos données, ainsi que d’un droit d’opposition au traitement. Vous gérez
+    directement la plupart des données dans l’App. Pour tout le reste — par exemple des données d’un
+    groupe que vous ne pouvez plus ouvrir — écrivez à
+    <a href="mailto:litovchenko.alexanders3@gmail.com">litovchenko.alexanders3@gmail.com</a> ; il s’agit
+    d’un projet mené par une seule personne, les demandes sont donc traitées personnellement. Vous avez
+    également le droit d’introduire une réclamation auprès d’une autorité de contrôle, par exemple celle
+    de votre pays.</p>
+
+    <h2>11. Enfants</h2>
+    <p>Fair ne s’adresse pas aux enfants de moins de 16 ans et ne collecte pas sciemment de données les
+    concernant.</p>
+
+    <h2>12. Modifications de cette politique</h2>
+    <p>Si cette politique change de manière notable, la date ci-dessus est mise à jour, et les
+    changements importants sont signalés dans les Nouveautés de l’App.</p>
+
+    <h2>Contact</h2>
+    <p>Alexander Litovchenko — <a href="mailto:litovchenko.alexanders3@gmail.com">litovchenko.alexanders3@gmail.com</a></p>
+  </section>
+
+  <section lang="es">
+    <header>
+      <h1>Política de privacidad — Fair</h1>
+      <div class="updated">Última actualización: 27 de octubre de 2026</div>
+    </header>
+    <p class="muted">Esto es una traducción. Si las versiones no coinciden, prevalece la versión alemana.</p>
+
+    <p>Fair («la App») está desarrollada y gestionada por <strong>Alexander Litovchenko</strong>, un
+    desarrollador independiente establecido en Alemania (Apple Developer Team ID: SFQY7V73AL), que es el
+    responsable del tratamiento de los datos descritos aquí. Esta política explica qué datos trata la
+    App, por qué y qué opciones tienes. Si tienes alguna pregunta, escribe a
+    <a href="mailto:litovchenko.alexanders3@gmail.com">litovchenko.alexanders3@gmail.com</a>.</p>
+
+    <p>Fair <strong>no tiene cuentas de usuario, ni contraseñas, ni registro</strong>. Cuando la App se
+    conecta por primera vez a nuestro servidor, crea un <strong>identificador técnico anónimo</strong>
+    para tu dispositivo. Este identificador no está vinculado a tu nombre, correo electrónico ni número
+    de teléfono; solo sirve para decidir qué grupos compartidos puede abrir este dispositivo y para
+    limitar los abusos (consulta las secciones siguientes).</p>
+
+    <h2>1. Datos guardados solo en tu dispositivo</h2>
+    <p>Lo siguiente se queda en tu teléfono. Se elimina definitivamente si desinstalas la App o usas
+    «Eliminar todos los datos» en Ajustes:</p>
+    <ul>
+      <li>Entradas de presupuesto personal, límites por categoría, ingresos y movimientos personales periódicos (pestaña Finanzas)</li>
+      <li>Preferencias de la App (idioma, tema, color de acento, visualización de la moneda, qué versión de Novedades has visto)</li>
+      <li>Los grupos para los que nunca activaste la sincronización, con todos sus gastos</li>
+    </ul>
+    <p>Tu nombre visible, tu foto de perfil y tus métodos de pago también se guardan en tu dispositivo.
+    Si eres miembro de un grupo sincronizado, se copian en tu ficha de miembro de ese grupo (consulta la
+    sección 2).</p>
+
+    <h2>2. Datos de los grupos que decides sincronizar</h2>
+    <p>Puedes activar la sincronización de un grupo para que todos sus miembros vean los mismos gastos.
+    Los datos se guardan entonces en nuestro proveedor de servidor,
+    <a href="https://supabase.com" target="_blank" rel="noopener">Supabase</a>, que actúa como encargado
+    del tratamiento; los servidores están en Londres (Reino Unido, país que cuenta con una decisión de
+    adecuación de la UE). Solo los dispositivos que se han <strong>unido al grupo</strong> con su código
+    o enlace de invitación pueden leerlo o modificarlo; conocer solo el código permite ver, antes de
+    unirse, únicamente el nombre del grupo y su número de miembros. Tras 20 códigos incorrectos en una
+    hora, los siguientes intentos se bloquean durante un tiempo.</p>
+    <table>
+      <tr><th>Datos</th><th>Finalidad</th></tr>
+      <tr><td>Nombre del grupo, moneda, presupuesto opcional, ajustes opcionales de viaje de negocios</td><td>Funcionamiento básico del grupo</td></tr>
+      <tr><td>Ubicación del grupo (nombre del lugar y coordenadas), solo si la indicas</td><td>Muestra el tiempo del viaje — consulta la sección 4</td></tr>
+      <tr><td>Nombres de los miembros, foto de perfil opcional</td><td>Mostrar quién pagó y quién debe cuánto a quién</td></tr>
+      <tr><td>Métodos de pago opcionales de un miembro: enlaces de pago (p. ej., PayPal, Revolut, Wise), IBAN o un número de teléfono para una app de pago (p. ej., Bizum, MB WAY, BLIK, Swish, Vipps, MobilePay)</td><td>Que los demás miembros del grupo puedan devolverte el dinero directamente</td></tr>
+      <tr><td>Token de notificaciones push e idioma de la App de un miembro</td><td>Avisarte en tu idioma — consulta la sección 5</td></tr>
+      <tr><td>Gastos: descripción, importe, quién pagó, quién debe cuánto, categoría, fecha, nota opcional, lugar y coordenadas opcionales</td><td>Funcionamiento básico del reparto de gastos</td></tr>
+      <tr><td>Foto opcional del tique por gasto, foto de portada del grupo</td><td>Justificante de compra, imagen del grupo; un tique también puede leerlo una IA — consulta la sección 3</td></tr>
+      <tr><td>Recordatorios de pago (quién recordó a quién, importe, hora)</td><td>Enviar la notificación del recordatorio</td></tr>
+      <tr><td>El identificador anónimo de cada dispositivo que se unió y cuándo se usó por última vez</td><td>Decidir qué dispositivos pueden abrir el grupo</td></tr>
+    </table>
+    <p>Las fotos se guardan bajo un enlace web largo e imposible de adivinar. Cualquiera que tenga ese
+    enlace exacto puede abrir la foto, así que comparte esos enlaces solo con personas de confianza.</p>
+
+    <h2>3. Funciones asistidas por IA (Anthropic)</h2>
+    <p>Dos funciones opcionales envían datos a <a href="https://www.anthropic.com" target="_blank" rel="noopener">Anthropic</a>
+    (creador de Claude), un proveedor de IA con sede en Estados Unidos, solo para darte un resultado —
+    nunca con fines publicitarios ni de elaboración de perfiles:</p>
+    <ul>
+      <li><strong>Escaneo de tiques:</strong> la foto que eliges se envía para leer el importe, la fecha
+      y el nombre del comercio. El resultado es solo una sugerencia que revisas antes de guardar.</li>
+      <li><strong>Resumen del viaje:</strong> se envían el nombre del grupo, los totales, el número de
+      días y de gastos, la categoría principal, el nombre y el importe de la persona que más pagó, y la
+      descripción y el importe del gasto más alto, para redactar un breve resumen. No se envía ninguna
+      foto.</li>
+    </ul>
+    <p>Ambas funciones son opcionales; Fair funciona por completo sin ellas. Para evitar abusos, el
+    número de usos diarios se cuenta por identificador anónimo de dispositivo (o, si no lo hay, por
+    dirección IP). Esto implica una transferencia a Estados Unidos, amparada por las condiciones de
+    tratamiento de datos de Anthropic, que incluyen las cláusulas contractuales tipo de la UE. Anthropic
+    no utiliza los datos enviados a través de su API para entrenar sus modelos.</p>
+
+    <h2>4. Tiempo, mapas y lugares</h2>
+    <p>Si indicas un lugar para un grupo o un gasto, Fair envía el nombre del lugar que escribes, o las
+    coordenadas, a <a href="https://open-meteo.com" target="_blank" rel="noopener">Open-Meteo</a> para
+    encontrar el lugar y mostrar el tiempo actual. La búsqueda de un lugar a partir de tu ubicación
+    actual y la vista de los gastos en un mapa usan los servicios de ubicación y mapas de Apple en tu
+    iPhone. El acceso a la ubicación solo se usa, con tu permiso, cuando añades un lugar tú mismo; Fair
+    nunca rastrea tu ubicación en segundo plano.</p>
+
+    <h2>5. Notificaciones push (Expo)</h2>
+    <p>Si permites las notificaciones, el token push de tu dispositivo se guarda (consulta la sección 2)
+    y se usa, a través del servicio push de Expo y del servicio de notificaciones de Apple, para avisarte
+    de nuevos gastos y recordatorios de pago en un grupo sincronizado. Para entregar una notificación,
+    su texto se transmite a estos servicios: el nombre del grupo, el nombre de la persona que pagó o
+    envió el recordatorio, la descripción del gasto y el importe.</p>
+
+    <h2>6. Conversión de moneda (Frankfurter)</h2>
+    <p>Si un gasto está en una moneda distinta de la del grupo, Fair consulta el tipo de cambio en
+    <a href="https://frankfurter.app" target="_blank" rel="noopener">Frankfurter</a>, un servicio
+    público de tipos de cambio. Solo se envían los dos códigos de moneda (p. ej., «EUR» y «USD»).</p>
+
+    <h2>7. Informes de fallos y errores (Sentry)</h2>
+    <p>Fair usa <a href="https://sentry.io" target="_blank" rel="noopener">Sentry</a> para detectar
+    fallos y errores y poder corregirlos. Está configurado para no enviar datos personales: ningún
+    identificador de usuario, ningún dato personal por defecto, y los IBAN, las direcciones de correo
+    electrónico y los códigos de invitación se ocultan antes de enviar un informe. Un informe contiene
+    información técnica, como el código que se estaba ejecutando y el modelo del dispositivo.</p>
+
+    <h2>8. Estadísticas de idioma y sugerencias de traducción</h2>
+    <p>Para comprobar si cada idioma de la App funciona bien, Fair cuenta algunos eventos anónimos por
+    idioma, por ejemplo «introducción completada» o «cambio a inglés». Solo se guardan el día, el
+    idioma, el evento y un recuento — ningún usuario, dispositivo ni grupo. Si usas
+    <strong>Ajustes → Idioma → Improve Translation</strong>, Fair envía el idioma, el texto que elegiste,
+    tu sugerencia y tu nota opcional, junto con el identificador anónimo del dispositivo (solo para
+    contar cuántas personas distintas proponen el mismo cambio y para limitar los abusos). Las
+    sugerencias se eliminan como máximo a los 180 días.</p>
+
+    <h2>9. Cuánto tiempo se conservan los datos</h2>
+    <ul>
+      <li>Datos en tu dispositivo: hasta que los borres, uses «Eliminar todos los datos» o desinstales
+      la App.</li>
+      <li>Datos de grupos sincronizados: mientras exista el grupo. Al eliminar el grupo en la App se
+      borran de nuestro servidor el grupo, sus miembros, gastos y recordatorios. Las fotos siguen
+      accesibles a través de su enlace hasta que las eliminemos; pídenoslo y lo haremos.</li>
+      <li>Al salir de un grupo se eliminan el acceso de tu dispositivo y tu token push; tu ficha de
+      miembro (nombre, foto, métodos de pago) se queda en el grupo para que los saldos de los demás sigan
+      siendo correctos. Escríbenos si quieres que se elimine o se anonimice.</li>
+      <li>«Eliminar todos los datos» en Ajustes borra los datos <strong>de tu dispositivo</strong>. Todavía
+      no borra tus fichas de miembro en los grupos sincronizados de nuestro servidor; escríbenos y las
+      eliminaremos.</li>
+      <li>El registro de códigos de invitación incorrectos se borra automáticamente al cabo de un día,
+      los contadores diarios de uso de IA a los 30 días y las sugerencias de traducción a los 180 días.</li>
+    </ul>
+
+    <h2>10. Tus derechos</h2>
+    <p>Tienes derecho de acceso, rectificación, supresión, limitación del tratamiento y portabilidad de
+    tus datos, así como a oponerte a su tratamiento. La mayoría de los datos los gestionas directamente
+    en la App. Para todo lo demás — por ejemplo, datos de un grupo que ya no puedes abrir — escribe a
+    <a href="mailto:litovchenko.alexanders3@gmail.com">litovchenko.alexanders3@gmail.com</a>; es un
+    proyecto de una sola persona, así que las solicitudes se atienden personalmente. También tienes
+    derecho a presentar una reclamación ante una autoridad de control, por ejemplo la de tu país.</p>
+
+    <h2>11. Menores</h2>
+    <p>Fair no está dirigida a menores de 16 años y no recoge conscientemente datos suyos.</p>
+
+    <h2>12. Cambios en esta política</h2>
+    <p>Si esta política cambia de forma relevante, se actualiza la fecha de arriba, y los cambios
+    importantes se indican en Novedades de la App.</p>
+
+    <h2>Contacto</h2>
+    <p>Alexander Litovchenko — <a href="mailto:litovchenko.alexanders3@gmail.com">litovchenko.alexanders3@gmail.com</a></p>
+  </section>
+
+  <section lang="it">
+    <header>
+      <h1>Informativa sulla privacy — Fair</h1>
+      <div class="updated">Ultimo aggiornamento: 27 ottobre 2026</div>
+    </header>
+    <p class="muted">Questa è una traduzione. In caso di differenze tra le versioni, prevale la versione tedesca.</p>
+
+    <p>Fair («l’App») è sviluppata e gestita da <strong>Alexander Litovchenko</strong>, uno sviluppatore
+    indipendente con sede in Germania (Apple Developer Team ID: SFQY7V73AL), che è il titolare del
+    trattamento dei dati qui descritti. Questa informativa spiega quali dati tratta l’App, perché e quali
+    scelte hai. Per qualsiasi domanda, scrivi a
+    <a href="mailto:litovchenko.alexanders3@gmail.com">litovchenko.alexanders3@gmail.com</a>.</p>
+
+    <p>Fair <strong>non ha account utente, password né registrazione</strong>. Quando l’App si collega
+    per la prima volta al nostro server, crea un <strong>identificativo tecnico anonimo</strong> per il
+    tuo dispositivo. Questo identificativo non è collegato al tuo nome, al tuo indirizzo email o al tuo
+    numero di telefono; serve solo a stabilire quali gruppi condivisi questo dispositivo può aprire e a
+    limitare gli abusi (vedi le sezioni seguenti).</p>
+
+    <h2>1. Dati salvati solo sul tuo dispositivo</h2>
+    <p>Quanto segue resta sul tuo telefono. Viene eliminato definitivamente se disinstalli l’App o usi
+    «Elimina tutti i dati» nelle Impostazioni:</p>
+    <ul>
+      <li>Voci del budget personale, limiti per categoria, entrate e movimenti personali ricorrenti (scheda Budget)</li>
+      <li>Preferenze dell’App (lingua, tema, colore di accento, visualizzazione della valuta, quale versione delle Novità hai visto)</li>
+      <li>I gruppi per cui non hai mai attivato la sincronizzazione, con tutte le loro spese</li>
+    </ul>
+    <p>Anche il tuo nome visualizzato, la tua foto profilo e i tuoi metodi di pagamento sono salvati sul
+    tuo dispositivo. Se sei membro di un gruppo sincronizzato, vengono copiati nella tua scheda membro di
+    quel gruppo (vedi la sezione 2).</p>
+
+    <h2>2. Dati dei gruppi che scegli di sincronizzare</h2>
+    <p>Puoi attivare la sincronizzazione di un gruppo in modo che tutti i membri vedano le stesse spese.
+    I dati vengono allora salvati presso il nostro fornitore di server,
+    <a href="https://supabase.com" target="_blank" rel="noopener">Supabase</a>, che agisce in qualità di
+    responsabile del trattamento; i server si trovano a Londra (Regno Unito, paese oggetto di una
+    decisione di adeguatezza dell’UE). Solo i dispositivi che si sono <strong>uniti al gruppo</strong>
+    con il suo codice o link di invito possono leggerlo o modificarlo; conoscere solo il codice mostra,
+    prima di unirsi, soltanto il nome del gruppo e il numero dei membri. Dopo 20 codici errati in un’ora,
+    ulteriori tentativi vengono bloccati per un po’.</p>
+    <table>
+      <tr><th>Dati</th><th>Finalità</th></tr>
+      <tr><td>Nome del gruppo, valuta, budget facoltativo, impostazioni facoltative per viaggi di lavoro</td><td>Funzionamento di base del gruppo</td></tr>
+      <tr><td>Luogo del gruppo (nome del luogo e coordinate), solo se ne imposti uno</td><td>Mostra il meteo del viaggio — vedi la sezione 4</td></tr>
+      <tr><td>Nomi dei membri, foto profilo facoltativa</td><td>Mostrare chi ha pagato e chi deve quanto a chi</td></tr>
+      <tr><td>Metodi di pagamento facoltativi di un membro: link di pagamento (ad es. PayPal, Revolut, Wise), IBAN o un numero di telefono per un’app di pagamento (ad es. Bizum, MB WAY, BLIK, Swish, Vipps, MobilePay)</td><td>Permettere agli altri membri del gruppo di rimborsarti direttamente</td></tr>
+      <tr><td>Token delle notifiche push e lingua dell’App di un membro</td><td>Avvisarti nella tua lingua — vedi la sezione 5</td></tr>
+      <tr><td>Spese: descrizione, importo, chi ha pagato, chi deve quanto, categoria, data, nota facoltativa, luogo e coordinate facoltativi</td><td>Funzionamento di base della divisione delle spese</td></tr>
+      <tr><td>Foto facoltativa dello scontrino per ogni spesa, foto di copertina del gruppo</td><td>Prova d’acquisto, immagine del gruppo; uno scontrino può anche essere letto da un’IA — vedi la sezione 3</td></tr>
+      <tr><td>Promemoria di pagamento (chi ha sollecitato chi, importo, ora)</td><td>Inviare la notifica del promemoria</td></tr>
+      <tr><td>L’identificativo anonimo di ogni dispositivo che si è unito e quando è stato usato l’ultima volta</td><td>Stabilire quali dispositivi possono aprire il gruppo</td></tr>
+    </table>
+    <p>Le foto sono salvate sotto un link web lungo e impossibile da indovinare. Chiunque abbia
+    esattamente quel link può aprire la foto, quindi condividi questi link solo con persone di cui ti fidi.</p>
+
+    <h2>3. Funzioni basate sull’IA (Anthropic)</h2>
+    <p>Due funzioni facoltative inviano dati ad <a href="https://www.anthropic.com" target="_blank" rel="noopener">Anthropic</a>
+    (produttore di Claude), un fornitore di IA con sede negli Stati Uniti, solo per fornirti un
+    risultato — mai per pubblicità o profilazione:</p>
+    <ul>
+      <li><strong>Scansione dello scontrino:</strong> la foto che scegli viene inviata per leggere
+      importo, data e nome del negozio. Il risultato è solo un suggerimento che controlli prima di
+      salvare.</li>
+      <li><strong>Riepilogo del viaggio:</strong> per scrivere un breve riepilogo vengono inviati il nome
+      del gruppo, i totali, il numero di giorni e di spese, la categoria principale, il nome e l’importo
+      della persona che ha pagato di più, e la descrizione e l’importo della spesa più alta. Non viene
+      inviata alcuna foto.</li>
+    </ul>
+    <p>Entrambe le funzioni sono facoltative; Fair funziona perfettamente anche senza. Per prevenire
+    abusi, il numero di utilizzi giornalieri viene contato per identificativo anonimo del dispositivo
+    (o, in sua assenza, per indirizzo IP). Ciò comporta un trasferimento verso gli Stati Uniti,
+    disciplinato dalle condizioni di trattamento dei dati di Anthropic, che includono le clausole
+    contrattuali tipo dell’UE. Anthropic non usa i dati inviati tramite la sua API per addestrare i
+    propri modelli.</p>
+
+    <h2>4. Meteo, mappe e luoghi</h2>
+    <p>Se imposti un luogo per un gruppo o una spesa, Fair invia il nome del luogo che digiti, oppure le
+    coordinate, a <a href="https://open-meteo.com" target="_blank" rel="noopener">Open-Meteo</a> per
+    trovare il luogo e mostrare il meteo attuale. La ricerca di un luogo a partire dalla tua posizione
+    attuale e la visualizzazione delle spese su una mappa usano i servizi di localizzazione e mappe di
+    Apple sul tuo iPhone. L’accesso alla posizione viene usato, con il tuo permesso, solo quando aggiungi
+    tu stesso un luogo; Fair non traccia mai la tua posizione in background.</p>
+
+    <h2>5. Notifiche push (Expo)</h2>
+    <p>Se consenti le notifiche, il token push del tuo dispositivo viene salvato (vedi la sezione 2) e
+    usato, tramite il servizio push di Expo e il servizio di notifiche di Apple, per avvisarti di nuove
+    spese e promemoria di pagamento in un gruppo sincronizzato. Per consegnare una notifica, il suo testo
+    viene trasmesso a questi servizi: il nome del gruppo, il nome della persona che ha pagato o inviato
+    il promemoria, la descrizione della spesa e l’importo.</p>
+
+    <h2>6. Conversione di valuta (Frankfurter)</h2>
+    <p>Se una spesa è in una valuta diversa da quella del gruppo, Fair recupera il tasso di cambio da
+    <a href="https://frankfurter.app" target="_blank" rel="noopener">Frankfurter</a>, un servizio
+    pubblico di tassi di cambio. Vengono inviati solo i due codici valuta (ad es. «EUR» e «USD»).</p>
+
+    <h2>7. Segnalazione di arresti anomali ed errori (Sentry)</h2>
+    <p>Fair usa <a href="https://sentry.io" target="_blank" rel="noopener">Sentry</a> per rilevare
+    arresti anomali ed errori in modo da poterli correggere. È configurato per non inviare dati
+    personali: nessun identificativo utente, nessun dato personale predefinito; IBAN, indirizzi email e
+    codici di invito vengono mascherati prima dell’invio di una segnalazione. Una segnalazione contiene
+    informazioni tecniche, come il codice in esecuzione e il modello del dispositivo.</p>
+
+    <h2>8. Statistiche sulle lingue e suggerimenti di traduzione</h2>
+    <p>Per capire se ogni lingua dell’App funziona bene, Fair conta alcuni eventi anonimi per lingua,
+    ad esempio «introduzione completata» o «passato all’inglese». Vengono salvati solo il giorno, la
+    lingua, l’evento e un conteggio — nessun utente, dispositivo o gruppo. Se usi
+    <strong>Impostazioni → Lingua → Improve Translation</strong>, Fair invia la lingua, il testo che hai
+    scelto, il tuo suggerimento e la tua nota facoltativa, insieme all’identificativo anonimo del
+    dispositivo (solo per contare quante persone diverse propongono la stessa modifica e per limitare
+    gli abusi). I suggerimenti vengono eliminati al più tardi dopo 180 giorni.</p>
+
+    <h2>9. Per quanto tempo vengono conservati i dati</h2>
+    <ul>
+      <li>Dati sul tuo dispositivo: finché non li elimini, usi «Elimina tutti i dati» o disinstalli l’App.</li>
+      <li>Dati dei gruppi sincronizzati: finché il gruppo esiste. Eliminando il gruppo nell’App, il gruppo,
+      i suoi membri, le spese e i promemoria vengono rimossi dal nostro server. Le foto restano
+      raggiungibili tramite il loro link finché non le rimuoviamo; chiedicelo e lo faremo.</li>
+      <li>Uscire da un gruppo rimuove l’accesso del tuo dispositivo e il tuo token push; la tua scheda
+      membro (nome, foto, metodi di pagamento) resta nel gruppo, così i saldi degli altri restano
+      corretti. Scrivici se vuoi che venga rimossa o resa anonima.</li>
+      <li>«Elimina tutti i dati» nelle Impostazioni elimina i dati <strong>sul tuo dispositivo</strong>.
+      Non elimina ancora le tue schede membro nei gruppi sincronizzati sul nostro server; scrivici e le
+      elimineremo.</li>
+      <li>L’elenco dei codici di invito errati viene eliminato automaticamente dopo un giorno, i contatori
+      giornalieri di utilizzo dell’IA dopo 30 giorni, i suggerimenti di traduzione dopo 180 giorni.</li>
+    </ul>
+
+    <h2>10. I tuoi diritti</h2>
+    <p>Hai il diritto di accesso, rettifica, cancellazione, limitazione del trattamento e portabilità dei
+    tuoi dati, nonché il diritto di opporti al loro trattamento. La maggior parte dei dati la gestisci
+    direttamente nell’App. Per tutto il resto — ad esempio dati di un gruppo che non riesci più ad
+    aprire — scrivi a
+    <a href="mailto:litovchenko.alexanders3@gmail.com">litovchenko.alexanders3@gmail.com</a>; è un
+    progetto di una sola persona, quindi le richieste vengono gestite personalmente. Hai inoltre il
+    diritto di proporre reclamo a un’autorità di controllo, ad esempio quella del tuo paese.</p>
+
+    <h2>11. Minori</h2>
+    <p>Fair non è rivolta a minori di 16 anni e non raccoglie consapevolmente dati che li riguardano.</p>
+
+    <h2>12. Modifiche a questa informativa</h2>
+    <p>Se questa informativa cambia in modo significativo, la data qui sopra viene aggiornata e le
+    modifiche importanti vengono segnalate nelle Novità dell’App.</p>
+
+    <h2>Contatti</h2>
+    <p>Alexander Litovchenko — <a href="mailto:litovchenko.alexanders3@gmail.com">litovchenko.alexanders3@gmail.com</a></p>
+  </section>
+
+  <section lang="pt">
+    <header>
+      <h1>Política de Privacidade — Fair</h1>
+      <div class="updated">Última atualização: 27 de outubro de 2026</div>
+    </header>
+    <p class="muted">Esta é uma tradução. Em caso de divergência entre as versões, prevalece a versão alemã.</p>
+
+    <p>A Fair («a App») é desenvolvida e gerida por <strong>Alexander Litovchenko</strong>, um
+    programador independente com sede na Alemanha (Apple Developer Team ID: SFQY7V73AL), que é o
+    responsável pelo tratamento dos dados aqui descritos. Esta política explica que dados a App trata,
+    porquê, e que opções tem. Se tiver alguma dúvida, escreva para
+    <a href="mailto:litovchenko.alexanders3@gmail.com">litovchenko.alexanders3@gmail.com</a>.</p>
+
+    <p>A Fair <strong>não tem contas de utilizador, palavras-passe nem registo</strong>. Quando a App se
+    liga pela primeira vez ao nosso servidor, cria um <strong>identificador técnico anónimo</strong> para
+    o seu dispositivo. Este identificador não está associado ao seu nome, endereço de e-mail ou número
+    de telefone; serve apenas para determinar que grupos partilhados este dispositivo pode abrir e para
+    limitar abusos (ver as secções abaixo).</p>
+
+    <h2>1. Dados guardados apenas no seu dispositivo</h2>
+    <p>O seguinte fica no seu telemóvel. É apagado definitivamente se desinstalar a App ou usar «Apagar
+    todos os dados» nas Definições:</p>
+    <ul>
+      <li>Entradas do orçamento pessoal, limites por categoria, rendimentos e movimentos pessoais recorrentes (separador Orçamento)</li>
+      <li>Preferências da App (idioma, tema, cor de destaque, apresentação da moeda, que versão das Novidades já viu)</li>
+      <li>Os grupos para os quais nunca ativou a sincronização, com todas as suas despesas</li>
+    </ul>
+    <p>O seu nome de apresentação, a sua foto de perfil e os seus métodos de pagamento também são guardados
+    no seu dispositivo. Se for membro de um grupo sincronizado, são copiados para a sua ficha de membro
+    nesse grupo (ver a secção 2).</p>
+
+    <h2>2. Dados dos grupos que escolhe sincronizar</h2>
+    <p>Pode ativar a sincronização de um grupo para que todos os membros vejam as mesmas despesas. Os
+    dados são então guardados no nosso fornecedor de servidor,
+    <a href="https://supabase.com" target="_blank" rel="noopener">Supabase</a>, que atua como
+    subcontratante; os servidores ficam em Londres (Reino Unido, um país com uma decisão de adequação da
+    UE). Só os dispositivos que <strong>aderiram ao grupo</strong> com o respetivo código ou link de
+    convite o podem ler ou alterar; conhecer apenas o código mostra, antes de aderir, só o nome do grupo
+    e o número de membros. Após 20 códigos errados no espaço de uma hora, as tentativas seguintes ficam
+    bloqueadas durante algum tempo.</p>
+    <table>
+      <tr><th>Dados</th><th>Finalidade</th></tr>
+      <tr><td>Nome do grupo, moeda, orçamento opcional, definições opcionais de viagem de negócios</td><td>Funcionamento básico do grupo</td></tr>
+      <tr><td>Local do grupo (nome do local e coordenadas), apenas se definir um</td><td>Mostra o tempo da viagem — ver a secção 4</td></tr>
+      <tr><td>Nomes dos membros, foto de perfil opcional</td><td>Mostrar quem pagou e quem deve quanto a quem</td></tr>
+      <tr><td>Métodos de pagamento opcionais de um membro: links de pagamento (p. ex., PayPal, Revolut, Wise), IBAN ou um número de telefone para uma app de pagamento (p. ex., Bizum, MB WAY, BLIK, Swish, Vipps, MobilePay)</td><td>Permitir que os outros membros do grupo lhe devolvam o dinheiro diretamente</td></tr>
+      <tr><td>Token de notificações push e idioma da App de um membro</td><td>Notificá-lo no seu idioma — ver a secção 5</td></tr>
+      <tr><td>Despesas: descrição, montante, quem pagou, quem deve quanto, categoria, data, nota opcional, local e coordenadas opcionais</td><td>Funcionamento básico da divisão de despesas</td></tr>
+      <tr><td>Foto opcional do talão por despesa, foto de capa do grupo</td><td>Comprovativo de compra, imagem do grupo; um talão também pode ser lido por IA — ver a secção 3</td></tr>
+      <tr><td>Lembretes de pagamento (quem lembrou quem, montante, hora)</td><td>Enviar a notificação do lembrete</td></tr>
+      <tr><td>O identificador anónimo de cada dispositivo que aderiu e quando foi usado pela última vez</td><td>Determinar que dispositivos podem abrir o grupo</td></tr>
+    </table>
+    <p>As fotos são guardadas num link web longo e impossível de adivinhar. Qualquer pessoa que tenha
+    exatamente esse link pode abrir a foto, por isso partilhe esses links apenas com pessoas de confiança.</p>
+
+    <h2>3. Funcionalidades com IA (Anthropic)</h2>
+    <p>Duas funcionalidades opcionais enviam dados para a <a href="https://www.anthropic.com" target="_blank" rel="noopener">Anthropic</a>
+    (criadora do Claude), um fornecedor de IA com sede nos Estados Unidos, apenas para lhe dar um
+    resultado — nunca para publicidade nem definição de perfis:</p>
+    <ul>
+      <li><strong>Digitalização de talões:</strong> a foto que escolher é enviada para ler o montante, a
+      data e o nome da loja. O resultado é apenas uma sugestão que verifica antes de guardar.</li>
+      <li><strong>Resumo da viagem:</strong> para escrever um breve resumo, são enviados o nome do grupo,
+      os totais, o número de dias e de despesas, a categoria principal, o nome e o montante da pessoa que
+      mais pagou, e a descrição e o montante da maior despesa. Não é enviada nenhuma foto.</li>
+    </ul>
+    <p>Ambas as funcionalidades são opcionais; a Fair funciona plenamente sem elas. Para evitar abusos, o
+    número de utilizações por dia é contado por identificador anónimo do dispositivo (ou, na falta deste,
+    por endereço IP). Isto implica uma transferência para os Estados Unidos, abrangida pelos termos de
+    tratamento de dados da Anthropic, que incluem as cláusulas contratuais-tipo da UE. A Anthropic não
+    utiliza os dados enviados através da sua API para treinar os seus modelos.</p>
+
+    <h2>4. Tempo, mapas e locais</h2>
+    <p>Se definir um local para um grupo ou uma despesa, a Fair envia o nome do local que escrever, ou as
+    coordenadas, para o <a href="https://open-meteo.com" target="_blank" rel="noopener">Open-Meteo</a>,
+    para encontrar o local e mostrar o tempo atual. A pesquisa de um local a partir da sua localização
+    atual e a apresentação das despesas num mapa usam os serviços de localização e de mapas da Apple no
+    seu iPhone. O acesso à localização só é usado, com a sua autorização, quando é você a adicionar um
+    local; a Fair nunca segue a sua localização em segundo plano.</p>
+
+    <h2>5. Notificações push (Expo)</h2>
+    <p>Se permitir notificações, o token push do seu dispositivo é guardado (ver a secção 2) e usado,
+    através do serviço push da Expo e do serviço de notificações da Apple, para o informar de novas
+    despesas e lembretes de pagamento num grupo sincronizado. Para entregar uma notificação, o respetivo
+    texto é transmitido a estes serviços: o nome do grupo, o nome da pessoa que pagou ou enviou o
+    lembrete, a descrição da despesa e o montante.</p>
+
+    <h2>6. Conversão de moeda (Frankfurter)</h2>
+    <p>Se uma despesa estiver numa moeda diferente da do grupo, a Fair obtém a taxa de câmbio junto do
+    <a href="https://frankfurter.app" target="_blank" rel="noopener">Frankfurter</a>, um serviço público
+    de taxas de câmbio. Só são enviados os dois códigos de moeda (p. ex., «EUR» e «USD»).</p>
+
+    <h2>7. Relatórios de falhas e erros (Sentry)</h2>
+    <p>A Fair usa o <a href="https://sentry.io" target="_blank" rel="noopener">Sentry</a> para detetar
+    falhas e erros e poder corrigi-los. Está configurado para não enviar dados pessoais: nenhum
+    identificador de utilizador, nenhuns dados pessoais por predefinição, e os IBAN, endereços de e-mail e
+    códigos de convite são ocultados antes de um relatório ser enviado. Um relatório contém informações
+    técnicas, como o código que estava a ser executado e o modelo do dispositivo.</p>
+
+    <h2>8. Estatísticas de idioma e sugestões de tradução</h2>
+    <p>Para perceber se cada idioma da App funciona bem, a Fair conta alguns eventos anónimos por idioma,
+    por exemplo «introdução concluída» ou «mudou para inglês». Só são guardados o dia, o idioma, o evento
+    e uma contagem — nenhum utilizador, dispositivo ou grupo. Se usar <strong>Definições → Idioma →
+    Improve Translation</strong>, a Fair envia o idioma, o texto que escolheu, a sua sugestão e a sua nota
+    opcional, juntamente com o identificador anónimo do dispositivo (apenas para contar quantas pessoas
+    diferentes sugerem a mesma alteração e para limitar abusos). As sugestões são apagadas, o mais
+    tardar, ao fim de 180 dias.</p>
+
+    <h2>9. Durante quanto tempo os dados são conservados</h2>
+    <ul>
+      <li>Dados no seu dispositivo: até os apagar, usar «Apagar todos os dados» ou desinstalar a App.</li>
+      <li>Dados de grupos sincronizados: enquanto o grupo existir. Apagar o grupo na App remove do nosso
+      servidor o grupo, os seus membros, despesas e lembretes. As fotos continuam acessíveis pelo
+      respetivo link até as removermos; peça-nos e nós removemo-las.</li>
+      <li>Sair de um grupo remove o acesso do seu dispositivo e o seu token push; a sua ficha de membro
+      (nome, foto, métodos de pagamento) fica no grupo para que os saldos dos outros continuem corretos.
+      Escreva-nos se quiser que seja removida ou anonimizada.</li>
+      <li>«Apagar todos os dados» nas Definições apaga os dados <strong>no seu dispositivo</strong>. Ainda
+      não apaga as suas fichas de membro nos grupos sincronizados no nosso servidor; escreva-nos e nós
+      apagamo-las.</li>
+      <li>O registo de códigos de convite errados é apagado automaticamente ao fim de um dia, os
+      contadores diários de utilização da IA ao fim de 30 dias e as sugestões de tradução ao fim de
+      180 dias.</li>
+    </ul>
+
+    <h2>10. Os seus direitos</h2>
+    <p>Tem direito de acesso, retificação, apagamento, limitação do tratamento e portabilidade dos seus
+    dados, bem como o direito de se opor ao seu tratamento. A maioria dos dados é gerida por si
+    diretamente na App. Para tudo o resto — por exemplo, dados de um grupo que já não consegue abrir —
+    escreva para
+    <a href="mailto:litovchenko.alexanders3@gmail.com">litovchenko.alexanders3@gmail.com</a>; este é um
+    projeto de uma só pessoa, por isso os pedidos são tratados pessoalmente. Tem também o direito de
+    apresentar reclamação a uma autoridade de controlo, por exemplo a do seu país.</p>
+
+    <h2>11. Crianças</h2>
+    <p>A Fair não se destina a crianças com menos de 16 anos e não recolhe conscientemente dados sobre
+    elas.</p>
+
+    <h2>12. Alterações a esta política</h2>
+    <p>Se esta política mudar de forma relevante, a data acima é atualizada, e as alterações importantes
+    são assinaladas nas Novidades da App.</p>
+
+    <h2>Contacto</h2>
+    <p>Alexander Litovchenko — <a href="mailto:litovchenko.alexanders3@gmail.com">litovchenko.alexanders3@gmail.com</a></p>
+  </section>
+
+  <section lang="nl">
+    <header>
+      <h1>Privacybeleid — Fair</h1>
+      <div class="updated">Laatst bijgewerkt: 27 oktober 2026</div>
+    </header>
+    <p class="muted">Dit is een vertaling. Bij verschillen tussen de versies geldt de Duitse versie.</p>
+
+    <p>Fair („de app”) wordt ontwikkeld en beheerd door <strong>Alexander Litovchenko</strong>, een
+    zelfstandige ontwikkelaar gevestigd in Duitsland (Apple Developer Team ID: SFQY7V73AL), die de
+    verwerkingsverantwoordelijke is voor de hier beschreven gegevens. Dit beleid legt uit welke gegevens de
+    app verwerkt, waarom, en welke keuzes je hebt. Heb je vragen, mail dan naar
+    <a href="mailto:litovchenko.alexanders3@gmail.com">litovchenko.alexanders3@gmail.com</a>.</p>
+
+    <p>Fair heeft <strong>geen gebruikersaccounts, geen wachtwoorden en geen registratie</strong>. Wanneer
+    de app voor het eerst verbinding maakt met onze server, maakt hij een <strong>anonieme technische
+    ID</strong> aan voor je apparaat. Deze ID is niet gekoppeld aan je naam, e-mailadres of telefoonnummer.
+    Hij wordt alleen gebruikt om te bepalen welke gedeelde groepen dit apparaat mag openen, en om misbruik
+    te beperken (zie de onderdelen hieronder).</p>
+
+    <h2>1. Gegevens die alleen op je apparaat worden opgeslagen</h2>
+    <p>Het volgende blijft op je telefoon. Het wordt definitief verwijderd als je de app verwijdert of in
+    Instellingen „Alle gegevens verwijderen” gebruikt:</p>
+    <ul>
+      <li>Persoonlijke budgetposten, categorielimieten, inkomsten en terugkerende persoonlijke transacties (tabblad Budget)</li>
+      <li>App-voorkeuren (taal, weergave, accentkleur, valutaweergave, welke versie van „Wat is er nieuw” je hebt gezien)</li>
+      <li>Groepen waarvoor je synchronisatie nooit hebt aangezet, met al hun uitgaven</li>
+    </ul>
+    <p>Je weergavenaam, profielfoto en betaalmethoden worden ook op je apparaat opgeslagen. Ben je lid van
+    een gesynchroniseerde groep, dan worden ze gekopieerd naar je ledenvermelding in die groep (zie
+    onderdeel 2).</p>
+
+    <h2>2. Gegevens van groepen die je synchroniseert</h2>
+    <p>Je kunt synchronisatie voor een groep aanzetten, zodat iedereen in de groep dezelfde uitgaven ziet.
+    De gegevens worden dan opgeslagen bij onze serverprovider
+    <a href="https://supabase.com" target="_blank" rel="noopener">Supabase</a>, die optreedt als onze
+    verwerker; de servers staan in Londen (Verenigd Koninkrijk, een land waarvoor de EU een
+    adequaatheidsbesluit heeft genomen). Alleen apparaten die met de uitnodigingscode of -link
+    <strong>lid zijn geworden van de groep</strong> kunnen hem lezen of wijzigen. Met alleen de code zie je
+    vóór het lid worden alleen de naam van de groep en het aantal leden. Na 20 foute codes binnen een uur
+    worden verdere pogingen een tijdje geblokkeerd.</p>
+    <table>
+      <tr><th>Gegevens</th><th>Doel</th></tr>
+      <tr><td>Groepsnaam, valuta, optioneel budget, optionele instellingen voor zakenreizen</td><td>Basisfunctie van de groep</td></tr>
+      <tr><td>Locatie van de groep (plaatsnaam en coördinaten), alleen als je er een instelt</td><td>Toont het weer voor de reis — zie onderdeel 4</td></tr>
+      <tr><td>Namen van leden, optionele profielfoto</td><td>Laten zien wie betaald heeft en wie wie wat schuldig is</td></tr>
+      <tr><td>Optionele betaalmethoden van een lid: betaallinks (bijv. PayPal, Revolut, Wise), IBAN of een telefoonnummer voor een betaalapp (bijv. Bizum, MB WAY, BLIK, Swish, Vipps, MobilePay)</td><td>Zodat anderen in de groep je direct kunnen terugbetalen</td></tr>
+      <tr><td>Pushtoken en app-taal van een lid</td><td>Meldingen in jouw taal — zie onderdeel 5</td></tr>
+      <tr><td>Uitgaven: omschrijving, bedrag, wie betaald heeft, wie hoeveel schuldig is, categorie, datum, optionele notitie, optionele plaats met coördinaten</td><td>Basisfunctie voor het verdelen van kosten</td></tr>
+      <tr><td>Optionele bonfoto per uitgave, omslagfoto van de groep</td><td>Aankoopbewijs, groepsfoto; een bon kan ook door AI worden gelezen — zie onderdeel 3</td></tr>
+      <tr><td>Betalingsherinneringen (wie wie heeft herinnerd, bedrag, tijdstip)</td><td>Versturen van de herinnering</td></tr>
+      <tr><td>De anonieme ID van elk apparaat dat lid is geworden, en wanneer het voor het laatst is gebruikt</td><td>Bepalen welke apparaten de groep mogen openen</td></tr>
+    </table>
+    <p>Foto's worden opgeslagen onder een lange, onraadbare weblink. Iedereen die precies die link heeft,
+    kan de foto openen. Deel zulke links dus alleen met mensen die je vertrouwt.</p>
+
+    <h2>3. Functies met AI-ondersteuning (Anthropic)</h2>
+    <p>Twee optionele functies sturen gegevens naar <a href="https://www.anthropic.com" target="_blank" rel="noopener">Anthropic</a>
+    (maker van Claude), een AI-aanbieder gevestigd in de Verenigde Staten — alleen om een resultaat voor je
+    te maken, nooit voor reclame of profilering:</p>
+    <ul>
+      <li><strong>Bon scannen:</strong> de foto die je kiest wordt verstuurd om het bedrag, de datum en de
+      naam van de winkel te lezen. Het resultaat is alleen een voorstel dat je controleert voordat je opslaat.</li>
+      <li><strong>Reissamenvatting:</strong> de groepsnaam, totalen, het aantal dagen en uitgaven, de grootste
+      categorie, de naam en het bedrag van de persoon die het meest heeft betaald, en de omschrijving en het
+      bedrag van de grootste uitgave worden verstuurd om een korte samenvatting te schrijven. Er worden geen
+      foto's verstuurd.</li>
+    </ul>
+    <p>Beide functies zijn vrijwillig; Fair werkt volledig zonder. Om misbruik te voorkomen, wordt het
+    aantal keren gebruik per dag geteld per anonieme apparaat-ID (of, zonder ID, per IP-adres). Hierbij
+    worden gegevens doorgegeven naar de Verenigde Staten; dat valt onder de voorwaarden voor
+    gegevensverwerking van Anthropic, die de standaardbepalingen inzake gegevensbescherming van de EU
+    bevatten. Anthropic gebruikt gegevens die via zijn API worden verstuurd niet om zijn modellen te trainen.</p>
+
+    <h2>4. Weer, kaarten en plaatsen</h2>
+    <p>Als je een plaats instelt voor een groep of een uitgave, stuurt Fair de plaatsnaam die je typt, of de
+    coördinaten, naar <a href="https://open-meteo.com" target="_blank" rel="noopener">Open-Meteo</a> om de
+    plaats te vinden en het actuele weer te tonen. Een plaats vinden op basis van je huidige locatie en
+    uitgaven op een kaart tonen gebeurt met de locatie- en kaartdiensten van Apple op je iPhone. Toegang tot
+    je locatie wordt alleen met je toestemming gebruikt, wanneer je zelf een plaats toevoegt; Fair volgt je
+    locatie nooit op de achtergrond.</p>
+
+    <h2>5. Pushmeldingen (Expo)</h2>
+    <p>Als je meldingen toestaat, wordt de pushtoken van je apparaat opgeslagen (zie onderdeel 2) en via de
+    pushdienst van Expo en de meldingsdienst van Apple gebruikt om je te laten weten dat er nieuwe uitgaven
+    en betalingsherinneringen zijn in een gesynchroniseerde groep. Om een melding te kunnen bezorgen, wordt
+    de tekst ervan aan deze diensten doorgegeven: de groepsnaam, de naam van de persoon die betaalde of de
+    herinnering stuurde, de omschrijving van de uitgave en het bedrag.</p>
+
+    <h2>6. Valutaomrekening (Frankfurter)</h2>
+    <p>Is een uitgave in een andere valuta dan die van de groep, dan haalt Fair de wisselkoers op bij
+    <a href="https://frankfurter.app" target="_blank" rel="noopener">Frankfurter</a>, een openbare
+    wisselkoersdienst. Alleen de twee valutacodes worden verstuurd (bijv. „EUR” en „USD”).</p>
+
+    <h2>7. Crash- en foutrapporten (Sentry)</h2>
+    <p>Fair gebruikt <a href="https://sentry.io" target="_blank" rel="noopener">Sentry</a> om crashes en
+    fouten op te vangen, zodat ze opgelost kunnen worden. Het is zo ingesteld dat er geen persoonsgegevens
+    worden verstuurd: geen gebruikers-ID, geen standaard persoonsgegevens, en IBAN's, e-mailadressen en
+    uitnodigingscodes worden onherkenbaar gemaakt voordat een rapport wordt verstuurd. Een rapport bevat
+    technische informatie, zoals de code die werd uitgevoerd en het model van het apparaat.</p>
+
+    <h2>8. Taalstatistieken en vertaalsuggesties</h2>
+    <p>Om te zien of elke app-taal goed werkt, telt Fair per taal een paar anonieme gebeurtenissen,
+    bijvoorbeeld „introductie afgerond” of „overgeschakeld naar Engels”. Alleen de dag, de taal, de
+    gebeurtenis en een aantal worden opgeslagen — geen gebruiker, apparaat of groep. Als je
+    <strong>Instellingen → Taal → Improve Translation</strong> gebruikt, stuurt Fair de taal, de tekst die je
+    hebt gekozen, je suggestie en je optionele notitie, samen met de anonieme apparaat-ID (alleen om te
+    tellen hoeveel verschillende mensen dezelfde wijziging voorstellen en om misbruik te beperken).
+    Suggesties worden uiterlijk na 180 dagen verwijderd.</p>
+
+    <h2>9. Hoe lang gegevens worden bewaard</h2>
+    <ul>
+      <li>Gegevens op je apparaat: tot je ze verwijdert, „Alle gegevens verwijderen” gebruikt of de app verwijdert.</li>
+      <li>Gegevens van gesynchroniseerde groepen: zolang de groep bestaat. Als je de groep in de app
+      verwijdert, worden de groep, de leden, uitgaven en herinneringen van onze server verwijderd. Foto's
+      blijven via hun link bereikbaar tot wij ze verwijderen; laat het ons weten, dan doen we dat.</li>
+      <li>Als je een groep verlaat, worden de toegang van je apparaat en je pushtoken verwijderd. Je
+      ledenvermelding (naam, foto, betaalmethoden) blijft in de groep, zodat de saldi van de anderen kloppen.
+      Mail ons als je wilt dat die wordt verwijderd of geanonimiseerd.</li>
+      <li>„Alle gegevens verwijderen” in Instellingen verwijdert de gegevens <strong>op je apparaat</strong>.
+      Je ledenvermeldingen in gesynchroniseerde groepen op onze server worden daarmee nog niet verwijderd;
+      mail ons, dan verwijderen wij ze.</li>
+      <li>De lijst met foute uitnodigingscodes wordt na één dag automatisch verwijderd, de dagelijkse
+      AI-gebruikstellers na 30 dagen, vertaalsuggesties na 180 dagen.</li>
+    </ul>
+
+    <h2>10. Je rechten</h2>
+    <p>Je hebt recht op inzage, rectificatie, gegevenswissing, beperking van de verwerking en
+    overdraagbaarheid van je gegevens, en het recht om bezwaar te maken tegen de verwerking ervan. De meeste
+    gegevens beheer je rechtstreeks in de app. Voor al het andere — bijvoorbeeld gegevens in een groep die je
+    niet meer kunt openen — mail naar
+    <a href="mailto:litovchenko.alexanders3@gmail.com">litovchenko.alexanders3@gmail.com</a>; dit is een
+    eenmansproject, dus verzoeken worden persoonlijk behandeld. Je hebt ook het recht om een klacht in te
+    dienen bij een toezichthoudende autoriteit voor gegevensbescherming, bijvoorbeeld die in je eigen land.</p>
+
+    <h2>11. Kinderen</h2>
+    <p>Fair is niet bedoeld voor kinderen jonger dan 16 jaar en verzamelt niet bewust gegevens van hen.</p>
+
+    <h2>12. Wijzigingen in dit beleid</h2>
+    <p>Als dit beleid wezenlijk verandert, verandert de datum hierboven; grotere wijzigingen worden vermeld
+    in de app onder „Wat is er nieuw”.</p>
+
+    <h2>Contact</h2>
+    <p>Alexander Litovchenko — <a href="mailto:litovchenko.alexanders3@gmail.com">litovchenko.alexanders3@gmail.com</a></p>
+  </section>
+
+  <section lang="pl">
+    <header>
+      <h1>Polityka prywatności — Fair</h1>
+      <div class="updated">Ostatnia aktualizacja: 27 października 2026</div>
+    </header>
+    <p class="muted">To jest tłumaczenie. W razie rozbieżności rozstrzygająca jest wersja niemiecka.</p>
+
+    <p>Fair („Aplikacja”) jest tworzona i prowadzona przez <strong>Alexandra Litovchenko</strong>,
+    niezależnego dewelopera z siedzibą w Niemczech (Apple Developer Team ID: SFQY7V73AL), który jest
+    administratorem opisanych tu danych. Ta polityka wyjaśnia, jakie dane przetwarza Aplikacja, w jakim
+    celu i jakie masz możliwości wyboru. Jeśli masz pytania, napisz na adres
+    <a href="mailto:litovchenko.alexanders3@gmail.com">litovchenko.alexanders3@gmail.com</a>.</p>
+
+    <p>Fair nie ma <strong>kont użytkowników, haseł ani rejestracji</strong>. Gdy Aplikacja po raz
+    pierwszy łączy się z naszym serwerem, tworzy <strong>anonimowy identyfikator techniczny</strong> dla
+    twojego urządzenia. Ten identyfikator nie jest powiązany z twoim imieniem, adresem e-mail ani numerem
+    telefonu. Służy wyłącznie do ustalenia, które udostępnione grupy to urządzenie może otwierać, oraz do
+    ograniczania nadużyć (zob. kolejne sekcje).</p>
+
+    <h2>1. Dane przechowywane tylko na twoim urządzeniu</h2>
+    <p>Poniższe dane pozostają w twoim telefonie. Zostają trwale usunięte, gdy odinstalujesz Aplikację
+    lub użyjesz opcji „Usuń wszystkie dane” w Ustawieniach:</p>
+    <ul>
+      <li>Osobiste wpisy budżetowe, limity kategorii, dochody i cykliczne transakcje osobiste (karta Budżet)</li>
+      <li>Ustawienia aplikacji (język, motyw, kolor akcentu, wyświetlanie waluty, która wersja „Co nowego” była już wyświetlona)</li>
+      <li>Grupy, w których synchronizacja nigdy nie została włączona, wraz ze wszystkimi ich wydatkami</li>
+    </ul>
+    <p>Twoja nazwa wyświetlana, zdjęcie profilowe i metody płatności są również przechowywane na twoim
+    urządzeniu. Jeśli jesteś członkiem zsynchronizowanej grupy, są one kopiowane do twojego wpisu
+    członka w tej grupie (zob. sekcja 2).</p>
+
+    <h2>2. Dane grup, które synchronizujesz</h2>
+    <p>Możesz włączyć synchronizację grupy, aby wszyscy jej członkowie widzieli te same wydatki. Dane są
+    wtedy przechowywane u naszego dostawcy serwerów,
+    <a href="https://supabase.com" target="_blank" rel="noopener">Supabase</a>, który działa jako nasz
+    podmiot przetwarzający; serwery znajdują się w Londynie (Zjednoczone Królestwo, państwo, wobec którego
+    UE wydała decyzję stwierdzającą odpowiedni stopień ochrony). Tylko urządzenia, które
+    <strong>dołączyły do grupy</strong> za pomocą jej kodu lub linku z zaproszeniem, mogą ją odczytywać
+    lub zmieniać. Sam kod przed dołączeniem pokazuje tylko nazwę grupy i liczbę członków. Po 20 błędnych
+    kodach w ciągu godziny kolejne próby są na jakiś czas blokowane.</p>
+    <table>
+      <tr><th>Dane</th><th>Cel</th></tr>
+      <tr><td>Nazwa grupy, waluta, opcjonalny budżet, opcjonalne ustawienia podróży służbowej</td><td>Podstawowe funkcje grupy</td></tr>
+      <tr><td>Miejsce grupy (nazwa miejsca i współrzędne), tylko jeśli je ustawisz</td><td>Pokazywanie pogody w miejscu podróży — zob. sekcja 4</td></tr>
+      <tr><td>Imiona członków, opcjonalne zdjęcie profilowe</td><td>Pokazywanie, kto zapłacił i kto komu ile jest winien</td></tr>
+      <tr><td>Opcjonalne metody płatności członka: linki do płatności (np. PayPal, Revolut, Wise), IBAN lub numer telefonu do aplikacji płatniczej (np. Bizum, MB WAY, BLIK, Swish, Vipps, MobilePay)</td><td>Aby inni w grupie mogli oddać ci pieniądze bezpośrednio</td></tr>
+      <tr><td>Token powiadomień push i język aplikacji członka</td><td>Powiadomienia w twoim języku — zob. sekcja 5</td></tr>
+      <tr><td>Wydatki: opis, kwota, kto zapłacił, kto ile jest winien, kategoria, data, opcjonalna notatka, opcjonalne miejsce ze współrzędnymi</td><td>Podstawowa funkcja dzielenia kosztów</td></tr>
+      <tr><td>Opcjonalne zdjęcie paragonu do każdego wydatku, zdjęcie tytułowe grupy</td><td>Dowód zakupu, zdjęcie grupy; paragon może też zostać odczytany przez AI — zob. sekcja 3</td></tr>
+      <tr><td>Przypomnienia o płatności (kto komu przypomniał, kwota, czas)</td><td>Wysłanie przypomnienia</td></tr>
+      <tr><td>Anonimowy identyfikator każdego urządzenia, które dołączyło, i czas jego ostatniego użycia</td><td>Ustalenie, które urządzenia mogą otwierać grupę</td></tr>
+    </table>
+    <p>Zdjęcia są przechowywane pod długim linkiem internetowym, którego nie da się odgadnąć. Każdy, kto ma
+    dokładnie ten link, może otworzyć zdjęcie. Dlatego udostępniaj takie linki tylko osobom, którym ufasz.</p>
+
+    <h2>3. Funkcje wspierane przez AI (Anthropic)</h2>
+    <p>Dwie opcjonalne funkcje wysyłają dane do <a href="https://www.anthropic.com" target="_blank" rel="noopener">Anthropic</a>
+    (twórcy Claude), dostawcy AI z siedzibą w Stanach Zjednoczonych — wyłącznie po to, aby przygotować dla
+    ciebie wynik, nigdy w celach reklamowych ani do profilowania:</p>
+    <ul>
+      <li><strong>Skanowanie paragonu:</strong> wybrane przez ciebie zdjęcie jest wysyłane, aby odczytać
+      kwotę, datę i nazwę sklepu. Wynik to tylko propozycja, którą sprawdzasz przed zapisaniem.</li>
+      <li><strong>Podsumowanie podróży:</strong> wysyłane są nazwa grupy, sumy, liczba dni i wydatków,
+      największa kategoria, imię i kwota osoby, która zapłaciła najwięcej, oraz opis i kwota największego
+      wydatku, aby napisać krótkie podsumowanie. Żadne zdjęcia nie są wysyłane.</li>
+    </ul>
+    <p>Obie funkcje są dobrowolne; Fair w pełni działa bez nich. Aby zapobiegać nadużyciom, liczba użyć
+    dziennie jest liczona dla każdego anonimowego identyfikatora urządzenia (a bez niego — dla każdego
+    adresu IP). Wiąże się to z przekazaniem danych do Stanów Zjednoczonych, objętym warunkami przetwarzania
+    danych Anthropic, które zawierają standardowe klauzule umowne UE. Anthropic nie wykorzystuje danych
+    wysyłanych przez swoje API do trenowania swoich modeli.</p>
+
+    <h2>4. Pogoda, mapy i miejsca</h2>
+    <p>Jeśli ustawisz miejsce dla grupy lub wydatku, Fair wysyła wpisaną nazwę miejsca lub współrzędne do
+    <a href="https://open-meteo.com" target="_blank" rel="noopener">Open-Meteo</a>, aby znaleźć to miejsce
+    i pokazać aktualną pogodę. Wyszukiwanie miejsca na podstawie twojej bieżącej lokalizacji oraz
+    pokazywanie wydatków na mapie korzystają z usług lokalizacji i map Apple na twoim iPhonie. Dostęp do
+    lokalizacji jest używany wyłącznie za twoją zgodą, gdy samodzielnie dodajesz miejsce; Fair nigdy nie śledzi
+    twojej lokalizacji w tle.</p>
+
+    <h2>5. Powiadomienia push (Expo)</h2>
+    <p>Jeśli zezwolisz na powiadomienia, token push twojego urządzenia jest przechowywany (zob. sekcja 2) i
+    używany za pośrednictwem usługi push Expo i usługi powiadomień Apple, aby informować cię o nowych
+    wydatkach i przypomnieniach o płatności w zsynchronizowanej grupie. Aby dostarczyć powiadomienie, jego
+    treść jest przekazywana tym usługom: nazwa grupy, imię osoby, która zapłaciła lub wysłała przypomnienie,
+    opis wydatku i kwota.</p>
+
+    <h2>6. Przeliczanie walut (Frankfurter)</h2>
+    <p>Jeśli wydatek jest w innej walucie niż waluta grupy, Fair pobiera kurs wymiany z
+    <a href="https://frankfurter.app" target="_blank" rel="noopener">Frankfurter</a>, publicznej usługi
+    kursów walut. Wysyłane są tylko dwa kody walut (np. „EUR” i „USD”).</p>
+
+    <h2>7. Raporty o awariach i błędach (Sentry)</h2>
+    <p>Fair używa <a href="https://sentry.io" target="_blank" rel="noopener">Sentry</a> do wychwytywania
+    awarii i błędów, aby można je było naprawić. Usługa jest skonfigurowana tak, aby nie wysyłać danych
+    osobowych: bez identyfikatora użytkownika, bez domyślnych danych osobowych, a numery IBAN, adresy e-mail
+    i kody zaproszeń są maskowane przed wysłaniem raportu. Raport zawiera informacje techniczne, takie jak
+    wykonywany kod i model urządzenia.</p>
+
+    <h2>8. Statystyki języków i propozycje tłumaczeń</h2>
+    <p>Aby sprawdzić, czy każdy język aplikacji dobrze działa, Fair zlicza kilka anonimowych zdarzeń dla
+    każdego języka, na przykład „wprowadzenie ukończone” albo „przełączono na angielski”. Przechowywane są
+    tylko dzień, język, zdarzenie i liczba — bez użytkownika, urządzenia czy grupy. Jeśli użyjesz opcji
+    <strong>Ustawienia → Język → Improve Translation</strong>, Fair wysyła język, wybrany tekst, twoją
+    propozycję i opcjonalną notatkę wraz z anonimowym identyfikatorem urządzenia (wyłącznie po to, aby
+    policzyć, ile różnych osób proponuje tę samą zmianę, i aby ograniczać nadużycia). Propozycje są usuwane
+    najpóźniej po 180 dniach.</p>
+
+    <h2>9. Jak długo przechowujemy dane</h2>
+    <ul>
+      <li>Dane na twoim urządzeniu: dopóki ich nie usuniesz, nie użyjesz opcji „Usuń wszystkie dane” lub nie odinstalujesz Aplikacji.</li>
+      <li>Dane zsynchronizowanych grup: dopóki grupa istnieje. Usunięcie grupy w Aplikacji usuwa grupę, jej
+      członków, wydatki i przypomnienia z naszego serwera. Zdjęcia pozostają dostępne pod swoim linkiem,
+      dopóki ich nie usuniemy; daj nam znać, a to zrobimy.</li>
+      <li>Opuszczenie grupy usuwa dostęp twojego urządzenia i twój token push. Twój wpis członka (imię,
+      zdjęcie, metody płatności) pozostaje w grupie, aby salda pozostałych osób się zgadzały. Napisz do nas,
+      jeśli chcesz, aby został usunięty lub zanonimizowany.</li>
+      <li>„Usuń wszystkie dane” w Ustawieniach usuwa dane <strong>na twoim urządzeniu</strong>. Nie usuwa
+      jeszcze twoich wpisów członka w zsynchronizowanych grupach na naszym serwerze; napisz do nas, a je
+      usuniemy.</li>
+      <li>Lista błędnych kodów zaproszeń jest automatycznie usuwana po jednym dniu, dzienne liczniki
+      użycia AI po 30 dniach, propozycje tłumaczeń po 180 dniach.</li>
+    </ul>
+
+    <h2>10. Twoje prawa</h2>
+    <p>Masz prawo dostępu do swoich danych, ich sprostowania, usunięcia, ograniczenia przetwarzania,
+    przenoszenia danych oraz prawo sprzeciwu wobec ich przetwarzania. Większością danych zarządzasz
+    bezpośrednio w Aplikacji. W pozostałych sprawach — na przykład w przypadku danych w grupie, której nie
+    możesz już otworzyć — napisz na adres
+    <a href="mailto:litovchenko.alexanders3@gmail.com">litovchenko.alexanders3@gmail.com</a>; to projekt
+    jednej osoby, więc wnioski są rozpatrywane osobiście. Masz też prawo wnieść skargę do organu
+    nadzorczego ds. ochrony danych, na przykład w swoim kraju.</p>
+
+    <h2>11. Dzieci</h2>
+    <p>Fair nie jest skierowana do dzieci poniżej 16 lat i świadomie nie zbiera ich danych.</p>
+
+    <h2>12. Zmiany tej polityki</h2>
+    <p>Jeśli ta polityka istotnie się zmieni, zmieni się data powyżej, a większe zmiany zostaną odnotowane
+    w aplikacji w sekcji „Co nowego”.</p>
+
+    <h2>Kontakt</h2>
+    <p>Alexander Litovchenko — <a href="mailto:litovchenko.alexanders3@gmail.com">litovchenko.alexanders3@gmail.com</a></p>
+  </section>
+
+  <section lang="cs">
+    <header>
+      <h1>Zásady ochrany osobních údajů — Fair</h1>
+      <div class="updated">Poslední aktualizace: 27. října 2026</div>
+    </header>
+    <p class="muted">Toto je překlad. V případě rozporů má přednost německá verze.</p>
+
+    <p>Aplikaci Fair („aplikace“) vyvíjí a provozuje <strong>Alexander Litovchenko</strong>, samostatný
+    vývojář se sídlem v Německu (Apple Developer Team ID: SFQY7V73AL), který je správcem zde popsaných
+    údajů. Tyto zásady vysvětlují, jaké údaje aplikace zpracovává, proč a jaké máš možnosti volby. Pokud
+    máš jakékoli otázky, napiš na
+    <a href="mailto:litovchenko.alexanders3@gmail.com">litovchenko.alexanders3@gmail.com</a>.</p>
+
+    <p>Fair nemá <strong>žádné uživatelské účty, žádná hesla a žádnou registraci</strong>. Když se
+    aplikace poprvé připojí k našemu serveru, vytvoří pro tvé zařízení <strong>anonymní technický
+    identifikátor</strong>. Tento identifikátor není propojen s tvým jménem, e-mailovou adresou ani
+    telefonním číslem. Slouží jen k určení, které sdílené skupiny smí toto zařízení otevřít, a k omezení
+    zneužití (viz níže).</p>
+
+    <h2>1. Údaje uložené pouze ve tvém zařízení</h2>
+    <p>Následující údaje zůstávají ve tvém telefonu. Trvale se smažou, když aplikaci odinstaluješ nebo
+    v Nastavení použiješ „Smazat všechna data“:</p>
+    <ul>
+      <li>Osobní položky rozpočtu, limity kategorií, příjmy a opakované osobní transakce (karta Rozpočet)</li>
+      <li>Nastavení aplikace (jazyk, vzhled, barva zvýraznění, zobrazení měny, která verze „Co je nového“ už byla zobrazena)</li>
+      <li>Skupiny, u kterých synchronizace nikdy nebyla zapnutá, se všemi jejich výdaji</li>
+    </ul>
+    <p>Tvoje zobrazované jméno, profilová fotka a platební metody jsou také uloženy ve tvém zařízení. Pokud
+    jsi členem synchronizované skupiny, zkopírují se do tvého členského záznamu v této skupině (viz
+    oddíl 2).</p>
+
+    <h2>2. Údaje skupin, které synchronizuješ</h2>
+    <p>U skupiny můžeš zapnout synchronizaci, aby všichni v ní viděli stejné výdaje. Údaje se pak ukládají
+    u našeho poskytovatele serverů
+    <a href="https://supabase.com" target="_blank" rel="noopener">Supabase</a>, který pro nás působí jako
+    zpracovatel; servery jsou v Londýně (Spojené království, země, pro kterou EU přijala rozhodnutí
+    o odpovídající ochraně). Číst nebo měnit skupinu mohou jen zařízení, která se ke skupině
+    <strong>připojila</strong> pomocí jejího kódu nebo odkazu s pozvánkou. Samotný kód před připojením
+    ukáže jen název skupiny a počet členů. Po 20 chybných kódech během jedné hodiny se další pokusy na
+    nějakou dobu zablokují.</p>
+    <table>
+      <tr><th>Údaje</th><th>Účel</th></tr>
+      <tr><td>Název skupiny, měna, volitelný rozpočet, volitelná nastavení pro služební cesty</td><td>Základní funkce skupiny</td></tr>
+      <tr><td>Místo skupiny (název místa a souřadnice), jen pokud ho nastavíš</td><td>Zobrazení počasí na cestě — viz oddíl 4</td></tr>
+      <tr><td>Jména členů, volitelná profilová fotka</td><td>Zobrazit, kdo zaplatil a kdo komu kolik dluží</td></tr>
+      <tr><td>Volitelné platební metody člena: platební odkazy (např. PayPal, Revolut, Wise), IBAN nebo telefonní číslo pro platební aplikaci (např. Bizum, MB WAY, BLIK, Swish, Vipps, MobilePay)</td><td>Aby ti ostatní ve skupině mohli peníze vrátit přímo</td></tr>
+      <tr><td>Token push oznámení a jazyk aplikace člena</td><td>Oznámení ve tvém jazyce — viz oddíl 5</td></tr>
+      <tr><td>Výdaje: popis, částka, kdo zaplatil, kdo kolik dluží, kategorie, datum, volitelná poznámka, volitelné místo se souřadnicemi</td><td>Základní funkce dělení výdajů</td></tr>
+      <tr><td>Volitelná fotka účtenky u každého výdaje, titulní fotka skupiny</td><td>Doklad o nákupu, obrázek skupiny; účtenku může navíc přečíst AI — viz oddíl 3</td></tr>
+      <tr><td>Upomínky k platbě (kdo komu připomněl, částka, čas)</td><td>Odeslání upomínky</td></tr>
+      <tr><td>Anonymní identifikátor každého připojeného zařízení a kdy bylo naposledy použito</td><td>Určit, která zařízení smí skupinu otevřít</td></tr>
+    </table>
+    <p>Fotky jsou uloženy pod dlouhým webovým odkazem, který nelze uhodnout. Kdo má přesně tento odkaz, může
+    fotku otevřít. Takové odkazy proto sdílej jen s lidmi, kterým důvěřuješ.</p>
+
+    <h2>3. Funkce s podporou AI (Anthropic)</h2>
+    <p>Dvě volitelné funkce odesílají údaje společnosti <a href="https://www.anthropic.com" target="_blank" rel="noopener">Anthropic</a>
+    (tvůrce Claude), poskytovateli AI se sídlem ve Spojených státech — jen proto, aby ti připravily
+    výsledek, nikdy pro reklamu ani profilování:</p>
+    <ul>
+      <li><strong>Skenování účtenky:</strong> fotka, kterou vybereš, se odešle, aby se z ní přečetla
+      částka, datum a název obchodu. Výsledek je jen návrh, který před uložením zkontroluješ.</li>
+      <li><strong>Shrnutí cesty:</strong> odesílá se název skupiny, součty, počet dní a výdajů, největší
+      kategorie, jméno a částka osoby, která zaplatila nejvíc, a popis a částka největšího výdaje, aby
+      vzniklo krátké shrnutí. Žádné fotky se neodesílají.</li>
+    </ul>
+    <p>Obě funkce jsou dobrovolné; Fair bez nich plně funguje. Aby se zabránilo zneužití, počítá se počet
+    použití za den pro každý anonymní identifikátor zařízení (bez něj pro každou IP adresu). Zahrnuje to
+    předání údajů do Spojených států, na které se vztahují podmínky zpracování údajů společnosti
+    Anthropic, jež obsahují standardní smluvní doložky EU. Anthropic nepoužívá údaje odeslané přes své
+    API k trénování svých modelů.</p>
+
+    <h2>4. Počasí, mapy a místa</h2>
+    <p>Pokud nastavíš místo pro skupinu nebo výdaj, Fair odešle zadaný název místa nebo souřadnice službě
+    <a href="https://open-meteo.com" target="_blank" rel="noopener">Open-Meteo</a>, aby se místo našlo
+    a zobrazilo aktuální počasí. Hledání místa podle tvé aktuální polohy a zobrazení výdajů na mapě využívají
+    polohové a mapové služby Apple ve tvém iPhonu. Přístup k poloze se používá jen s tvým svolením, když
+    místo přidáváš ručně; Fair nikdy nesleduje tvou polohu na pozadí.</p>
+
+    <h2>5. Push oznámení (Expo)</h2>
+    <p>Pokud povolíš oznámení, uloží se push token tvého zařízení (viz oddíl 2) a používá se
+    prostřednictvím push služby Expo a oznamovací služby Apple k informování o nových výdajích
+    a upomínkách k platbě v synchronizované skupině. Aby bylo možné oznámení doručit, předává se jeho text
+    těmto službám: název skupiny, jméno osoby, která zaplatila nebo poslala upomínku, popis výdaje
+    a částka.</p>
+
+    <h2>6. Převod měn (Frankfurter)</h2>
+    <p>Pokud je výdaj v jiné měně, než je měna skupiny, Fair zjistí směnný kurz ze služby
+    <a href="https://frankfurter.app" target="_blank" rel="noopener">Frankfurter</a>, veřejné služby se
+    směnnými kurzy. Odesílají se jen dva kódy měn (např. „EUR“ a „USD“).</p>
+
+    <h2>7. Hlášení pádů a chyb (Sentry)</h2>
+    <p>Fair používá <a href="https://sentry.io" target="_blank" rel="noopener">Sentry</a> k zachycení pádů
+    a chyb, aby je bylo možné opravit. Služba je nastavena tak, aby neodesílala osobní údaje: žádný
+    identifikátor uživatele, žádné výchozí osobní údaje a čísla IBAN, e-mailové adresy a kódy pozvánek
+    se před odesláním hlášení zamaskují. Hlášení obsahuje technické informace, například prováděný kód
+    a model zařízení.</p>
+
+    <h2>8. Statistiky jazyků a návrhy překladů</h2>
+    <p>Aby bylo vidět, zda každý jazyk aplikace dobře funguje, počítá Fair pro každý jazyk několik
+    anonymních událostí, například „úvod dokončen“ nebo „přepnuto na angličtinu“. Ukládá se jen den,
+    jazyk, událost a počet — žádný uživatel, zařízení ani skupina. Pokud použiješ <strong>Nastavení →
+    Jazyk → Improve Translation</strong>, Fair odešle jazyk, vybraný text, tvůj návrh a volitelnou
+    poznámku spolu s anonymním identifikátorem zařízení (jen aby se dalo spočítat, kolik různých lidí
+    navrhuje stejnou změnu, a aby se omezilo zneužití). Návrhy se mažou nejpozději po 180 dnech.</p>
+
+    <h2>9. Jak dlouho se údaje uchovávají</h2>
+    <ul>
+      <li>Údaje ve tvém zařízení: dokud je nesmažeš, nepoužiješ „Smazat všechna data“ nebo aplikaci neodinstaluješ.</li>
+      <li>Údaje synchronizovaných skupin: dokud skupina existuje. Smazáním skupiny v aplikaci se z našeho
+      serveru odstraní skupina, její členové, výdaje a upomínky. Fotky zůstanou dostupné přes svůj odkaz,
+      dokud je neodstraníme; dej nám vědět a uděláme to.</li>
+      <li>Opuštěním skupiny se odstraní přístup tvého zařízení a tvůj push token. Tvůj členský záznam
+      (jméno, fotka, platební metody) zůstane ve skupině, aby zůstatky ostatních zůstaly správné. Napiš
+      nám, pokud chceš, aby byl odstraněn nebo anonymizován.</li>
+      <li>„Smazat všechna data“ v Nastavení smaže údaje <strong>ve tvém zařízení</strong>. Tvé členské
+      záznamy v synchronizovaných skupinách na našem serveru zatím nesmaže; napiš nám a smažeme je.</li>
+      <li>Záznam chybných kódů pozvánek se automaticky smaže po jednom dni, denní počítadla použití AI po
+      30 dnech, návrhy překladů po 180 dnech.</li>
+    </ul>
+
+    <h2>10. Tvoje práva</h2>
+    <p>Máš právo na přístup ke svým údajům, jejich opravu, výmaz, omezení zpracování, přenositelnost údajů
+    a právo vznést námitku proti jejich zpracování. Většinu údajů spravuješ přímo v aplikaci. Ve všech
+    ostatních věcech — například u údajů ve skupině, kterou už nemůžeš otevřít — napiš na
+    <a href="mailto:litovchenko.alexanders3@gmail.com">litovchenko.alexanders3@gmail.com</a>; jde o projekt
+    jednoho člověka, takže žádosti se vyřizují osobně. Máš také právo podat stížnost u dozorového úřadu pro
+    ochranu osobních údajů, například ve své zemi.</p>
+
+    <h2>11. Děti</h2>
+    <p>Aplikace Fair není určena dětem mladším 16 let a vědomě od nich neshromažďuje žádné údaje.</p>
+
+    <h2>12. Změny těchto zásad</h2>
+    <p>Pokud se tyto zásady podstatně změní, změní se datum výše; větší změny budou uvedeny v aplikaci
+    v části „Co je nového“.</p>
+
+    <h2>Kontakt</h2>
+    <p>Alexander Litovchenko — <a href="mailto:litovchenko.alexanders3@gmail.com">litovchenko.alexanders3@gmail.com</a></p>
+  </section>
+
+  <section lang="sv">
+    <header>
+      <h1>Integritetspolicy — Fair</h1>
+      <div class="updated">Senast uppdaterad: 27 oktober 2026</div>
+    </header>
+    <p class="muted">Detta är en översättning. Om versionerna skiljer sig åt gäller den tyska versionen.</p>
+
+    <p>Fair (”appen”) utvecklas och drivs av <strong>Alexander Litovchenko</strong>, en enskild
+    utvecklare med säte i Tyskland (Apple Developer Team ID: SFQY7V73AL), som är
+    personuppgiftsansvarig för de uppgifter som beskrivs här. Den här policyn förklarar vilka uppgifter
+    appen behandlar, varför, och vilka val du har. Om du har frågor, kontakta
+    <a href="mailto:litovchenko.alexanders3@gmail.com">litovchenko.alexanders3@gmail.com</a>.</p>
+
+    <p>Fair har <strong>inga användarkonton, inga lösenord och ingen registrering</strong>. När appen
+    ansluter till vår server första gången skapar den ett <strong>anonymt tekniskt ID</strong> för din
+    enhet. Detta ID är inte kopplat till ditt namn, din e-postadress eller ditt telefonnummer; det används
+    bara för att avgöra vilka delade grupper enheten får öppna och för att begränsa missbruk (se
+    avsnitten nedan).</p>
+
+    <h2>1. Uppgifter som bara lagras på din enhet</h2>
+    <p>Följande stannar på din telefon. Det raderas permanent om du avinstallerar appen eller använder
+    ”Radera all data” i Inställningar:</p>
+    <ul>
+      <li>Personliga budgetposter, kategorigränser, inkomster och återkommande personliga transaktioner (fliken Budget)</li>
+      <li>Appinställningar (språk, tema, accentfärg, valutavisning, vilken version av nyheterna du har sett)</li>
+      <li>Grupper som du aldrig har slagit på synkronisering för, med alla deras utgifter</li>
+    </ul>
+    <p>Ditt visningsnamn, din profilbild och dina betalningssätt lagras också på din enhet. Om du är
+    medlem i en synkroniserad grupp kopieras de till din medlemspost i den gruppen (se avsnitt 2).</p>
+
+    <h2>2. Uppgifter som lagras för grupper du väljer att synkronisera</h2>
+    <p>Du kan slå på synkronisering för en grupp så att alla i den ser samma utgifter. Uppgifterna
+    lagras då hos vår serverleverantör <a href="https://supabase.com" target="_blank" rel="noopener">Supabase</a>,
+    som är vårt personuppgiftsbiträde; servrarna finns i London (Förenade kungariket, ett land med ett
+    beslut om adekvat skyddsnivå från EU). Bara enheter som har <strong>gått med i gruppen</strong> med
+    dess inbjudningskod eller länk kan läsa eller ändra den; den som bara känner till koden ser före
+    anslutningen endast gruppens namn och antal medlemmar. Efter 20 felaktiga koder inom en timme
+    blockeras nya försök en stund.</p>
+    <table>
+      <tr><th>Uppgifter</th><th>Ändamål</th></tr>
+      <tr><td>Gruppnamn, valuta, valfri budget, valfria inställningar för tjänsteresor</td><td>Gruppens grundfunktioner</td></tr>
+      <tr><td>Gruppens plats (ortnamn och koordinater), bara om du anger en</td><td>Visar vädret för resan — se avsnitt 4</td></tr>
+      <tr><td>Medlemmarnas namn, valfri profilbild</td><td>Visa vem som har betalat och vem som är skyldig vem</td></tr>
+      <tr><td>En medlems valfria betalningssätt: betalningslänkar (t.ex. PayPal, Revolut, Wise), IBAN eller ett telefonnummer för en betalapp (t.ex. Bizum, MB WAY, BLIK, Swish, Vipps, MobilePay)</td><td>Så att andra i gruppen kan betala tillbaka direkt till dig</td></tr>
+      <tr><td>En medlems push-token och appspråk</td><td>Aviseringar på ditt språk — se avsnitt 5</td></tr>
+      <tr><td>Utgifter: beskrivning, belopp, vem som betalade, vem som är skyldig vad, kategori, datum, valfri anteckning, valfri plats med koordinater</td><td>Grundfunktionen att dela kostnader</td></tr>
+      <tr><td>Valfritt kvittofoto per utgift, gruppens omslagsbild</td><td>Köpbevis, gruppbild; ett kvitto kan också läsas av AI — se avsnitt 3</td></tr>
+      <tr><td>Betalningspåminnelser (vem som påminde vem, belopp, tidpunkt)</td><td>Skicka påminnelsen</td></tr>
+      <tr><td>Det anonyma ID:t för varje enhet som har gått med, och när det senast användes</td><td>Avgöra vilka enheter som får öppna gruppen</td></tr>
+    </table>
+    <p>Foton lagras under en lång webblänk som inte går att gissa. Den som har exakt den länken kan
+    öppna fotot, så dela bara sådana länkar med personer du litar på.</p>
+
+    <h2>3. AI-stödda funktioner (Anthropic)</h2>
+    <p>Två valfria funktioner skickar uppgifter till <a href="https://www.anthropic.com" target="_blank" rel="noopener">Anthropic</a>
+    (som gör Claude), en AI-leverantör med säte i USA, bara för att ta fram ett resultat åt dig —
+    aldrig för reklam eller profilering:</p>
+    <ul>
+      <li><strong>Kvittoskanning:</strong> fotot du väljer skickas för att läsa av belopp, datum och
+      butikens namn. Resultatet är bara ett förslag som du kontrollerar innan du sparar.</li>
+      <li><strong>Resesammanfattning:</strong> gruppnamnet, summorna, antalet dagar och utgifter, den
+      största kategorin, namnet och beloppet för den person som betalade mest samt beskrivningen och
+      beloppet för den största utgiften skickas för att skriva en kort sammanfattning. Inga foton skickas.</li>
+    </ul>
+    <p>Båda funktionerna är frivilliga; Fair fungerar fullt ut utan dem. För att förhindra missbruk räknas
+    antalet användningar per dag per anonymt enhets-ID (eller, om sådant saknas, per IP-adress). Detta
+    innebär en överföring till USA, som omfattas av Anthropics villkor för databehandling, vilka innehåller
+    EU:s standardavtalsklausuler. Anthropic använder inte uppgifter som skickas via dess API för att träna
+    sina modeller.</p>
+
+    <h2>4. Väder, kartor och platser</h2>
+    <p>Om du anger en plats för en grupp eller en utgift skickar Fair det ortnamn du skriver, eller
+    koordinaterna, till <a href="https://open-meteo.com" target="_blank" rel="noopener">Open-Meteo</a>
+    för att hitta platsen och visa aktuellt väder. När en plats hittas utifrån din nuvarande position och
+    när utgifter visas på en karta används Apples plats- och karttjänster på din iPhone. Platsåtkomst
+    används bara, med ditt tillstånd, när du själv lägger till en plats; Fair spårar aldrig din position i
+    bakgrunden.</p>
+
+    <h2>5. Pushaviseringar (Expo)</h2>
+    <p>Om du tillåter aviseringar lagras enhetens push-token (se avsnitt 2) och används, via Expos
+    pushtjänst och Apples aviseringstjänst, för att meddela dig om nya utgifter och
+    betalningspåminnelser i en synkroniserad grupp. För att en avisering ska kunna levereras skickas dess
+    text till dessa tjänster: gruppnamnet, namnet på den som betalade eller skickade påminnelsen,
+    utgiftens beskrivning och beloppet.</p>
+
+    <h2>6. Valutaomräkning (Frankfurter)</h2>
+    <p>Om en utgift är i en annan valuta än gruppens hämtar Fair växelkursen från
+    <a href="https://frankfurter.app" target="_blank" rel="noopener">Frankfurter</a>, en offentlig
+    växelkurstjänst. Bara de två valutakoderna skickas (t.ex. ”EUR” och ”USD”).</p>
+
+    <h2>7. Krasch- och felrapporter (Sentry)</h2>
+    <p>Fair använder <a href="https://sentry.io" target="_blank" rel="noopener">Sentry</a> för att fånga
+    krascher och fel så att de kan åtgärdas. Tjänsten är inställd på att inte skicka personuppgifter: inget
+    användar-ID, inga personuppgifter som standard, och IBAN-nummer, e-postadresser och inbjudningskoder
+    maskeras innan en rapport skickas. En rapport innehåller teknisk information, till exempel vilken kod
+    som kördes och enhetsmodellen.</p>
+
+    <h2>8. Språkstatistik och översättningsförslag</h2>
+    <p>För att se om varje appspråk fungerar bra räknar Fair några anonyma händelser per språk, till
+    exempel ”introduktionen slutförd” eller ”bytte till engelska”. Bara dagen, språket, händelsen och ett
+    antal lagras — ingen användare, ingen enhet, ingen grupp. Om du använder <strong>Inställningar → Språk →
+    Improve Translation</strong> skickar Fair språket, texten du valde, ditt förslag och din valfria
+    anteckning tillsammans med det anonyma enhets-ID:t (bara för att räkna hur många olika personer som
+    föreslår samma ändring och för att begränsa missbruk). Förslag raderas senast efter 180 dagar.</p>
+
+    <h2>9. Hur länge uppgifterna sparas</h2>
+    <ul>
+      <li>Uppgifter på din enhet: tills du raderar dem, använder ”Radera all data” eller avinstallerar appen.</li>
+      <li>Uppgifter i synkroniserade grupper: så länge gruppen finns. Om du raderar gruppen i appen tas
+      gruppen, dess medlemmar, utgifter och påminnelser bort från vår server. Foton kan nås via sin länk
+      tills vi tar bort dem; säg till, så gör vi det.</li>
+      <li>När du lämnar en grupp tas din enhets åtkomst och push-token bort; din medlemspost (namn, foto,
+      betalningssätt) finns kvar i gruppen så att de andras saldon fortsätter att stämma. Hör av dig om du
+      vill att den tas bort eller anonymiseras.</li>
+      <li>”Radera all data” i Inställningar raderar uppgifterna <strong>på din enhet</strong>. Det raderar
+      ännu inte dina medlemsposter i synkroniserade grupper på vår server; skriv till oss så raderar vi dem.</li>
+      <li>Listan över felaktiga inbjudningskoder raderas automatiskt efter en dag, de dagliga
+      AI-användningsräknarna efter 30 dagar och översättningsförslag efter 180 dagar.</li>
+    </ul>
+
+    <h2>10. Dina rättigheter</h2>
+    <p>Du har rätt till tillgång, rättelse, radering, begränsning av behandling och dataportabilitet samt
+    rätt att göra invändningar mot behandlingen. De flesta uppgifter styr du själv direkt i appen. För allt
+    annat — till exempel uppgifter i en grupp som du inte längre kan öppna — skriv till
+    <a href="mailto:litovchenko.alexanders3@gmail.com">litovchenko.alexanders3@gmail.com</a>; det här är
+    ett enmansprojekt, så förfrågningar hanteras personligen. Du har också rätt att lämna in ett klagomål
+    till en tillsynsmyndighet för dataskydd, till exempel den i ditt land.</p>
+
+    <h2>11. Barn</h2>
+    <p>Fair riktar sig inte till barn under 16 år och samlar inte medvetet in uppgifter om dem.</p>
+
+    <h2>12. Ändringar av den här policyn</h2>
+    <p>Om den här policyn ändras på ett betydande sätt ändras datumet ovan, och större ändringar nämns i
+    appens nyheter.</p>
+
+    <h2>Kontakt</h2>
+    <p>Alexander Litovchenko — <a href="mailto:litovchenko.alexanders3@gmail.com">litovchenko.alexanders3@gmail.com</a></p>
+  </section>
+
+  <section lang="da">
+    <header>
+      <h1>Privatlivspolitik — Fair</h1>
+      <div class="updated">Sidst opdateret: 27. oktober 2026</div>
+    </header>
+    <p class="muted">Dette er en oversættelse. Hvis versionerne afviger fra hinanden, gælder den tyske version.</p>
+
+    <p>Fair (»appen«) udvikles og drives af <strong>Alexander Litovchenko</strong>, en
+    enkeltperson-udvikler med base i Tyskland (Apple Developer Team ID: SFQY7V73AL), som er
+    dataansvarlig for de oplysninger, der beskrives her. Denne politik forklarer, hvilke oplysninger
+    appen behandler, hvorfor, og hvilke valg du har. Har du spørgsmål, så kontakt
+    <a href="mailto:litovchenko.alexanders3@gmail.com">litovchenko.alexanders3@gmail.com</a>.</p>
+
+    <p>Fair har <strong>ingen brugerkonti, ingen adgangskoder og ingen registrering</strong>. Når appen
+    første gang forbinder til vores server, opretter den et <strong>anonymt teknisk ID</strong> til din
+    enhed. Dette ID er ikke knyttet til dit navn, din e-mailadresse eller dit telefonnummer; det bruges kun
+    til at afgøre, hvilke delte grupper enheden må åbne, og til at begrænse misbrug (se afsnittene
+    nedenfor).</p>
+
+    <h2>1. Oplysninger, der kun gemmes på din enhed</h2>
+    <p>Følgende bliver på din telefon. Det slettes permanent, hvis du afinstallerer appen eller bruger
+    »Slet alle data« i Indstillinger:</p>
+    <ul>
+      <li>Personlige budgetposter, kategorigrænser, indkomst og tilbagevendende personlige posteringer (fanen Budget)</li>
+      <li>Appindstillinger (sprog, tema, accentfarve, visning af valuta, hvilken version af nyhederne du har set)</li>
+      <li>Grupper, som du aldrig har slået synkronisering til for, med alle deres udgifter</li>
+    </ul>
+    <p>Dit visningsnavn, dit profilbillede og dine betalingsmetoder gemmes også på din enhed. Hvis du er
+    medlem af en synkroniseret gruppe, kopieres de til din medlemspost i den gruppe (se afsnit 2).</p>
+
+    <h2>2. Oplysninger, der gemmes for grupper, du vælger at synkronisere</h2>
+    <p>Du kan slå synkronisering til for en gruppe, så alle i den ser de samme udgifter. Oplysningerne
+    gemmes så hos vores serverudbyder <a href="https://supabase.com" target="_blank" rel="noopener">Supabase</a>,
+    som er vores databehandler; serverne står i London (Det Forenede Kongerige, et land, som EU har truffet
+    en afgørelse om tilstrækkeligt beskyttelsesniveau for). Kun enheder, der har <strong>tilsluttet sig
+    gruppen</strong> med dens invitationskode eller link, kan læse eller ændre den; kender man kun koden,
+    ser man før tilslutningen kun gruppens navn og antal medlemmer. Efter 20 forkerte koder inden for en
+    time blokeres flere forsøg i et stykke tid.</p>
+    <table>
+      <tr><th>Oplysninger</th><th>Formål</th></tr>
+      <tr><td>Gruppenavn, valuta, valgfrit budget, valgfrie indstillinger for forretningsrejser</td><td>Gruppens grundfunktioner</td></tr>
+      <tr><td>Gruppens sted (stednavn og koordinater), kun hvis du angiver et</td><td>Viser vejret for rejsen — se afsnit 4</td></tr>
+      <tr><td>Medlemmernes navne, valgfrit profilbillede</td><td>Vise, hvem der har betalt, og hvem der skylder hvem</td></tr>
+      <tr><td>Et medlems valgfrie betalingsmetoder: betalingslinks (f.eks. PayPal, Revolut, Wise), IBAN eller et telefonnummer til en betalingsapp (f.eks. Bizum, MB WAY, BLIK, Swish, Vipps, MobilePay)</td><td>Så andre i gruppen kan betale dig direkte tilbage</td></tr>
+      <tr><td>Et medlems push-token og appsprog</td><td>Notifikationer på dit sprog — se afsnit 5</td></tr>
+      <tr><td>Udgifter: beskrivelse, beløb, hvem der betalte, hvem der skylder hvad, kategori, dato, valgfri note, valgfrit sted med koordinater</td><td>Grundfunktionen med at dele udgifter</td></tr>
+      <tr><td>Valgfrit kvitteringsfoto pr. udgift, gruppens forsidebillede</td><td>Købsbevis, gruppebillede; en kvittering kan også blive læst af AI — se afsnit 3</td></tr>
+      <tr><td>Betalingspåmindelser (hvem der mindede hvem, beløb, tidspunkt)</td><td>Sende påmindelsen</td></tr>
+      <tr><td>Det anonyme ID for hver enhed, der har tilsluttet sig, og hvornår den sidst blev brugt</td><td>Afgøre, hvilke enheder der må åbne gruppen</td></tr>
+    </table>
+    <p>Fotos gemmes under et langt weblink, som ikke kan gættes. Alle, der har præcis det link, kan åbne
+    fotoet, så del kun sådanne links med folk, du stoler på.</p>
+
+    <h2>3. AI-understøttede funktioner (Anthropic)</h2>
+    <p>To valgfrie funktioner sender oplysninger til <a href="https://www.anthropic.com" target="_blank" rel="noopener">Anthropic</a>
+    (som laver Claude), en AI-udbyder med hjemsted i USA, kun for at give dig et resultat — aldrig til
+    reklame eller profilering:</p>
+    <ul>
+      <li><strong>Scanning af kvitteringer:</strong> det foto, du vælger, sendes for at aflæse beløb, dato
+      og butikkens navn. Resultatet er kun et forslag, som du tjekker, før du gemmer.</li>
+      <li><strong>Rejseopsummering:</strong> gruppenavnet, totalerne, antallet af dage og udgifter, den
+      største kategori, navn og beløb for den person, der har betalt mest, samt beskrivelse og beløb for
+      den største udgift sendes for at skrive en kort opsummering. Der sendes ingen fotos.</li>
+    </ul>
+    <p>Begge funktioner er frivillige; Fair fungerer fuldt ud uden dem. For at forhindre misbrug tælles
+    antallet af brug pr. dag pr. anonymt enheds-ID (eller, hvis der ikke er et, pr. IP-adresse). Det
+    indebærer en overførsel til USA, som er dækket af Anthropics vilkår for databehandling, der indeholder
+    EU's standardkontraktbestemmelser. Anthropic bruger ikke oplysninger, der sendes via deres API, til at
+    træne deres modeller.</p>
+
+    <h2>4. Vejr, kort og steder</h2>
+    <p>Hvis du angiver et sted for en gruppe eller en udgift, sender Fair det stednavn, du skriver, eller
+    koordinaterne til <a href="https://open-meteo.com" target="_blank" rel="noopener">Open-Meteo</a>
+    for at finde stedet og vise det aktuelle vejr. Når et sted findes ud fra din nuværende placering, og når
+    udgifter vises på et kort, bruges Apples placerings- og korttjenester på din iPhone. Adgang til din
+    placering bruges kun, med din tilladelse, når du selv tilføjer et sted; Fair sporer aldrig din placering
+    i baggrunden.</p>
+
+    <h2>5. Push-notifikationer (Expo)</h2>
+    <p>Hvis du tillader notifikationer, gemmes din enheds push-token (se afsnit 2) og bruges via Expos
+    push-tjeneste og Apples notifikationstjeneste til at give dig besked om nye udgifter og
+    betalingspåmindelser i en synkroniseret gruppe. For at en notifikation kan leveres, sendes dens tekst
+    videre til disse tjenester: gruppenavnet, navnet på den person, der betalte eller sendte påmindelsen,
+    udgiftens beskrivelse og beløbet.</p>
+
+    <h2>6. Valutaomregning (Frankfurter)</h2>
+    <p>Hvis en udgift er i en anden valuta end gruppens, slår Fair vekselkursen op hos
+    <a href="https://frankfurter.app" target="_blank" rel="noopener">Frankfurter</a>, en offentlig
+    vekselkurstjeneste. Kun de to valutakoder sendes (f.eks. »EUR« og »USD«).</p>
+
+    <h2>7. Nedbrud- og fejlrapporter (Sentry)</h2>
+    <p>Fair bruger <a href="https://sentry.io" target="_blank" rel="noopener">Sentry</a> til at fange
+    nedbrud og fejl, så de kan rettes. Tjenesten er sat op til ikke at sende personoplysninger: intet
+    bruger-ID, ingen personoplysninger som standard, og IBAN-numre, e-mailadresser og invitationskoder
+    sløres, før en rapport sendes. En rapport indeholder tekniske oplysninger, f.eks. hvilken kode der
+    kørte, og enhedens model.</p>
+
+    <h2>8. Sprogstatistik og forslag til oversættelser</h2>
+    <p>For at se, om hvert appsprog fungerer godt, tæller Fair nogle få anonyme hændelser pr. sprog, for
+    eksempel »introduktion gennemført« eller »skiftet til engelsk«. Kun dagen, sproget, hændelsen og et
+    antal gemmes — ingen bruger, ingen enhed, ingen gruppe. Hvis du bruger <strong>Indstillinger → Sprog →
+    Improve Translation</strong>, sender Fair sproget, den tekst, du har valgt, dit forslag og din valgfrie
+    note sammen med det anonyme enheds-ID (kun for at tælle, hvor mange forskellige personer der foreslår
+    den samme ændring, og for at begrænse misbrug). Forslag slettes senest efter 180 dage.</p>
+
+    <h2>9. Hvor længe oplysningerne opbevares</h2>
+    <ul>
+      <li>Oplysninger på din enhed: indtil du sletter dem, bruger »Slet alle data« eller afinstallerer appen.</li>
+      <li>Oplysninger i synkroniserede grupper: så længe gruppen findes. Sletter du gruppen i appen, fjernes
+      gruppen, dens medlemmer, udgifter og påmindelser fra vores server. Fotos kan nås via deres link,
+      indtil vi fjerner dem; sig til, så gør vi det.</li>
+      <li>Forlader du en gruppe, fjernes din enheds adgang og dit push-token; din medlemspost (navn, foto,
+      betalingsmetoder) bliver i gruppen, så de andres saldi stadig passer. Skriv til os, hvis du vil have
+      den fjernet eller anonymiseret.</li>
+      <li>»Slet alle data« i Indstillinger sletter oplysningerne <strong>på din enhed</strong>. Det sletter
+      endnu ikke dine medlemsposter i synkroniserede grupper på vores server; skriv til os, så sletter vi dem.</li>
+      <li>Listen over forkerte invitationskoder slettes automatisk efter en dag, de daglige tællere for
+      AI-brug efter 30 dage og forslag til oversættelser efter 180 dage.</li>
+    </ul>
+
+    <h2>10. Dine rettigheder</h2>
+    <p>Du har ret til indsigt, berigtigelse, sletning, begrænsning af behandling og dataportabilitet samt
+    ret til at gøre indsigelse mod behandlingen. De fleste oplysninger styrer du selv direkte i appen. For
+    alt andet — for eksempel oplysninger i en gruppe, du ikke længere kan åbne — skriv til
+    <a href="mailto:litovchenko.alexanders3@gmail.com">litovchenko.alexanders3@gmail.com</a>; det er et
+    enmandsprojekt, så henvendelser behandles personligt. Du har også ret til at indgive en klage til en
+    tilsynsmyndighed for databeskyttelse, for eksempel den i dit land.</p>
+
+    <h2>11. Børn</h2>
+    <p>Fair er ikke rettet mod børn under 16 år og indsamler ikke bevidst oplysninger om dem.</p>
+
+    <h2>12. Ændringer af denne politik</h2>
+    <p>Hvis denne politik ændres væsentligt, ændres datoen ovenfor, og større ændringer nævnes i appens
+    nyheder.</p>
+
+    <h2>Kontakt</h2>
+    <p>Alexander Litovchenko — <a href="mailto:litovchenko.alexanders3@gmail.com">litovchenko.alexanders3@gmail.com</a></p>
+  </section>
+
+  <section lang="nb">
+    <header>
+      <h1>Personvernerklæring — Fair</h1>
+      <div class="updated">Sist oppdatert: 27. oktober 2026</div>
+    </header>
+    <p class="muted">Dette er en oversettelse. Hvis versjonene avviker fra hverandre, gjelder den tyske versjonen.</p>
+
+    <p>Fair («appen») utvikles og drives av <strong>Alexander Litovchenko</strong>, en enkeltperson
+    som utvikler med base i Tyskland (Apple Developer Team ID: SFQY7V73AL), og som er
+    behandlingsansvarlig for opplysningene som beskrives her. Denne erklæringen forklarer hvilke
+    opplysninger appen behandler, hvorfor, og hvilke valg du har. Har du spørsmål, ta kontakt på
+    <a href="mailto:litovchenko.alexanders3@gmail.com">litovchenko.alexanders3@gmail.com</a>.</p>
+
+    <p>Fair har <strong>ingen brukerkontoer, ingen passord og ingen registrering</strong>. Når appen
+    kobler seg til serveren vår første gang, oppretter den en <strong>anonym teknisk ID</strong> for
+    enheten din. Denne ID-en er ikke knyttet til navnet ditt, e-postadressen din eller telefonnummeret
+    ditt; den brukes bare til å avgjøre hvilke delte grupper enheten kan åpne, og til å begrense misbruk
+    (se avsnittene nedenfor).</p>
+
+    <h2>1. Opplysninger som bare lagres på enheten din</h2>
+    <p>Følgende blir værende på telefonen din. Det slettes permanent hvis du avinstallerer appen eller
+    bruker «Slett alle data» i Innstillinger:</p>
+    <ul>
+      <li>Personlige budsjettposter, kategorigrenser, inntekter og faste personlige transaksjoner (fanen Budsjett)</li>
+      <li>Appinnstillinger (språk, tema, aksentfarge, visning av valuta, hvilken versjon av nyhetene du har sett)</li>
+      <li>Grupper du aldri har slått på synkronisering for, med alle utgiftene deres</li>
+    </ul>
+    <p>Visningsnavnet ditt, profilbildet ditt og betalingsmåtene dine lagres også på enheten din. Hvis du
+    er medlem av en synkronisert gruppe, kopieres de til medlemsoppføringen din i den gruppen (se avsnitt 2).</p>
+
+    <h2>2. Opplysninger som lagres for grupper du velger å synkronisere</h2>
+    <p>Du kan slå på synkronisering for en gruppe slik at alle i den ser de samme utgiftene. Opplysningene
+    lagres da hos serverleverandøren vår <a href="https://supabase.com" target="_blank" rel="noopener">Supabase</a>,
+    som er vår databehandler; serverne står i London (Storbritannia, et land med en beslutning fra EU om
+    tilstrekkelig beskyttelsesnivå). Bare enheter som har <strong>blitt med i gruppen</strong> med
+    invitasjonskoden eller lenken, kan lese eller endre den; den som bare kjenner koden, ser før
+    innmeldingen bare gruppens navn og antall medlemmer. Etter 20 feil koder innen én time blokkeres nye
+    forsøk en stund.</p>
+    <table>
+      <tr><th>Opplysninger</th><th>Formål</th></tr>
+      <tr><td>Gruppenavn, valuta, valgfritt budsjett, valgfrie innstillinger for jobbreiser</td><td>Gruppens grunnfunksjoner</td></tr>
+      <tr><td>Gruppens sted (stedsnavn og koordinater), bare hvis du angir et</td><td>Viser været for reisen — se avsnitt 4</td></tr>
+      <tr><td>Medlemmenes navn, valgfritt profilbilde</td><td>Vise hvem som har betalt og hvem som skylder hvem</td></tr>
+      <tr><td>Et medlems valgfrie betalingsmåter: betalingslenker (f.eks. PayPal, Revolut, Wise), IBAN eller et telefonnummer til en betalingsapp (f.eks. Bizum, MB WAY, BLIK, Swish, Vipps, MobilePay)</td><td>Slik at andre i gruppen kan betale deg tilbake direkte</td></tr>
+      <tr><td>Et medlems push-token og appspråk</td><td>Varsler på ditt språk — se avsnitt 5</td></tr>
+      <tr><td>Utgifter: beskrivelse, beløp, hvem som betalte, hvem som skylder hva, kategori, dato, valgfritt notat, valgfritt sted med koordinater</td><td>Grunnfunksjonen for å dele utgifter</td></tr>
+      <tr><td>Valgfritt kvitteringsbilde per utgift, gruppens forsidebilde</td><td>Kjøpsbevis, gruppebilde; en kvittering kan også bli lest av KI — se avsnitt 3</td></tr>
+      <tr><td>Betalingspåminnelser (hvem som minnet hvem, beløp, tidspunkt)</td><td>Sende påminnelsen</td></tr>
+      <tr><td>Den anonyme ID-en til hver enhet som har blitt med, og når den sist ble brukt</td><td>Avgjøre hvilke enheter som kan åpne gruppen</td></tr>
+    </table>
+    <p>Bilder lagres under en lang nettlenke som ikke kan gjettes. Alle som har akkurat den lenken, kan
+    åpne bildet, så del slike lenker bare med folk du stoler på.</p>
+
+    <h2>3. KI-baserte funksjoner (Anthropic)</h2>
+    <p>To valgfrie funksjoner sender opplysninger til <a href="https://www.anthropic.com" target="_blank" rel="noopener">Anthropic</a>
+    (som lager Claude), en KI-leverandør med hovedsete i USA, bare for å gi deg et resultat — aldri for
+    reklame eller profilering:</p>
+    <ul>
+      <li><strong>Skanning av kvitteringer:</strong> bildet du velger, sendes for å lese av beløp, dato og
+      butikkens navn. Resultatet er bare et forslag som du sjekker før du lagrer.</li>
+      <li><strong>Reisesammendrag:</strong> gruppenavnet, totalsummene, antall dager og utgifter, den
+      største kategorien, navnet og beløpet til personen som betalte mest, samt beskrivelsen og beløpet for
+      den største utgiften sendes for å skrive et kort sammendrag. Ingen bilder sendes.</li>
+    </ul>
+    <p>Begge funksjonene er frivillige; Fair fungerer fullt ut uten dem. For å hindre misbruk telles antall
+    bruk per dag per anonym enhets-ID (eller, uten en slik ID, per IP-adresse). Dette innebærer en
+    overføring til USA, som er dekket av Anthropics vilkår for databehandling, som inneholder EUs
+    standardkontraktsklausuler (standard personvernbestemmelser). Anthropic bruker ikke opplysninger som
+    sendes via API-et deres, til å trene modellene sine.</p>
+
+    <h2>4. Vær, kart og steder</h2>
+    <p>Hvis du angir et sted for en gruppe eller en utgift, sender Fair stedsnavnet du skriver, eller
+    koordinatene, til <a href="https://open-meteo.com" target="_blank" rel="noopener">Open-Meteo</a>
+    for å finne stedet og vise været akkurat nå. Når et sted finnes ut fra der du er nå, og når utgifter
+    vises på et kart, brukes Apples posisjons- og karttjenester på iPhonen din. Tilgang til posisjonen din
+    brukes bare, med din tillatelse, når du selv legger til et sted; Fair sporer aldri posisjonen din i
+    bakgrunnen.</p>
+
+    <h2>5. Push-varsler (Expo)</h2>
+    <p>Hvis du tillater varsler, lagres enhetens push-token (se avsnitt 2) og brukes, via Expos
+    push-tjeneste og Apples varslingstjeneste, til å gi deg beskjed om nye utgifter og
+    betalingspåminnelser i en synkronisert gruppe. For at et varsel skal kunne leveres, sendes teksten
+    videre til disse tjenestene: gruppenavnet, navnet på personen som betalte eller sendte påminnelsen,
+    beskrivelsen av utgiften og beløpet.</p>
+
+    <h2>6. Valutaomregning (Frankfurter)</h2>
+    <p>Hvis en utgift er i en annen valuta enn gruppens, henter Fair vekslingskursen fra
+    <a href="https://frankfurter.app" target="_blank" rel="noopener">Frankfurter</a>, en offentlig
+    tjeneste for valutakurser. Bare de to valutakodene sendes (f.eks. «EUR» og «USD»).</p>
+
+    <h2>7. Krasj- og feilrapporter (Sentry)</h2>
+    <p>Fair bruker <a href="https://sentry.io" target="_blank" rel="noopener">Sentry</a> til å fange opp
+    krasj og feil slik at de kan rettes. Tjenesten er satt opp til ikke å sende personopplysninger: ingen
+    bruker-ID, ingen personopplysninger som standard, og IBAN-numre, e-postadresser og invitasjonskoder
+    maskeres før en rapport sendes. En rapport inneholder teknisk informasjon, for eksempel hvilken kode
+    som kjørte og enhetsmodellen.</p>
+
+    <h2>8. Språkstatistikk og forslag til oversettelser</h2>
+    <p>For å se om hvert appspråk fungerer godt, teller Fair noen få anonyme hendelser per språk, for
+    eksempel «introduksjon fullført» eller «byttet til engelsk». Bare dagen, språket, hendelsen og et antall
+    lagres — ingen bruker, ingen enhet, ingen gruppe. Hvis du bruker <strong>Innstillinger → Språk →
+    Improve Translation</strong>, sender Fair språket, teksten du valgte, forslaget ditt og det valgfrie
+    notatet ditt sammen med den anonyme enhets-ID-en (bare for å telle hvor mange forskjellige personer som
+    foreslår den samme endringen, og for å begrense misbruk). Forslag slettes senest etter 180 dager.</p>
+
+    <h2>9. Hvor lenge opplysningene lagres</h2>
+    <ul>
+      <li>Opplysninger på enheten din: til du sletter dem, bruker «Slett alle data» eller avinstallerer appen.</li>
+      <li>Opplysninger i synkroniserte grupper: så lenge gruppen finnes. Sletter du gruppen i appen, fjernes
+      gruppen, medlemmene, utgiftene og påminnelsene fra serveren vår. Bilder kan nås via lenken sin til vi
+      fjerner dem; si fra, så gjør vi det.</li>
+      <li>Forlater du en gruppe, fjernes enhetens tilgang og push-tokenet ditt; medlemsoppføringen din (navn,
+      bilde, betalingsmåter) blir værende i gruppen slik at de andres saldoer fortsatt stemmer. Gi oss
+      beskjed hvis du vil at den skal fjernes eller anonymiseres.</li>
+      <li>«Slett alle data» i Innstillinger sletter opplysningene <strong>på enheten din</strong>. Den sletter
+      ennå ikke medlemsoppføringene dine i synkroniserte grupper på serveren vår; skriv til oss, så sletter vi
+      dem.</li>
+      <li>Listen over feil invitasjonskoder slettes automatisk etter én dag, de daglige tellerne for KI-bruk
+      etter 30 dager og forslag til oversettelser etter 180 dager.</li>
+    </ul>
+
+    <h2>10. Rettighetene dine</h2>
+    <p>Du har rett til innsyn, retting, sletting, begrensning av behandlingen og dataportabilitet, og rett
+    til å protestere mot behandlingen. De fleste opplysningene styrer du selv direkte i appen. For alt annet
+    — for eksempel opplysninger i en gruppe du ikke lenger kan åpne — skriv til
+    <a href="mailto:litovchenko.alexanders3@gmail.com">litovchenko.alexanders3@gmail.com</a>; dette er et
+    enmannsprosjekt, så henvendelser behandles personlig. Du har også rett til å klage til en
+    tilsynsmyndighet for personvern, for eksempel den i landet ditt.</p>
+
+    <h2>11. Barn</h2>
+    <p>Fair er ikke rettet mot barn under 16 år og samler ikke bevisst inn opplysninger om dem.</p>
+
+    <h2>12. Endringer i denne erklæringen</h2>
+    <p>Hvis denne erklæringen endres på en vesentlig måte, endres datoen ovenfor, og større endringer
+    nevnes i appens nyheter.</p>
+
+    <h2>Kontakt</h2>
+    <p>Alexander Litovchenko — <a href="mailto:litovchenko.alexanders3@gmail.com">litovchenko.alexanders3@gmail.com</a></p>
+  </section>
+
+  <section lang="fi">
+    <header>
+      <h1>Tietosuojaseloste — Fair</h1>
+      <div class="updated">Päivitetty viimeksi: 27. lokakuuta 2026</div>
+    </header>
+    <p class="muted">Tämä on käännös. Jos versiot poikkeavat toisistaan, saksankielinen versio on ratkaiseva.</p>
+
+    <p>Fair-sovellusta (”sovellus”) kehittää ja ylläpitää <strong>Alexander Litovchenko</strong>,
+    Saksassa toimiva yksityinen kehittäjä (Apple Developer Team ID: SFQY7V73AL), joka on tässä
+    kuvattujen tietojen rekisterinpitäjä. Tässä selosteessa kerrotaan, mitä tietoja sovellus käsittelee,
+    miksi, ja mitä vaihtoehtoja sinulla on. Jos sinulla on kysyttävää, ota yhteyttä:
+    <a href="mailto:litovchenko.alexanders3@gmail.com">litovchenko.alexanders3@gmail.com</a>.</p>
+
+    <p>Fairissa <strong>ei ole käyttäjätilejä, salasanoja eikä rekisteröitymistä</strong>. Kun sovellus
+    muodostaa ensimmäisen kerran yhteyden palvelimeemme, se luo laitteellesi <strong>anonyymin teknisen
+    tunnisteen</strong>. Tunnistetta ei ole liitetty nimeesi, sähköpostiosoitteeseesi tai
+    puhelinnumeroosi; sitä käytetään vain sen ratkaisemiseen, mitä jaettuja ryhmiä tämä laite saa avata,
+    sekä väärinkäytön rajoittamiseen (katso alla olevat kohdat).</p>
+
+    <h2>1. Vain laitteellesi tallennettavat tiedot</h2>
+    <p>Seuraavat tiedot pysyvät puhelimessasi. Ne poistetaan pysyvästi, jos poistat sovelluksen tai
+    käytät Asetuksissa toimintoa ”Poista kaikki tiedot”:</p>
+    <ul>
+      <li>Henkilökohtaiset budjettimerkinnät, kategoriarajat, tulot ja toistuvat henkilökohtaiset tapahtumat (Budjetti-välilehti)</li>
+      <li>Sovelluksen asetukset (kieli, teema, korostusväri, valuutan näyttö, minkä version uutisista olet nähnyt)</li>
+      <li>Ryhmät, joille et ole koskaan ottanut synkronointia käyttöön, kaikkine kuluineen</li>
+    </ul>
+    <p>Myös näyttönimesi, profiilikuvasi ja maksutapasi tallennetaan laitteellesi. Jos olet
+    synkronoidun ryhmän jäsen, ne kopioidaan jäsentietoihisi kyseisessä ryhmässä (katso kohta 2).</p>
+
+    <h2>2. Tiedot ryhmistä, jotka päätät synkronoida</h2>
+    <p>Voit ottaa ryhmän synkronoinnin käyttöön, jolloin kaikki ryhmän jäsenet näkevät samat kulut.
+    Tiedot tallennetaan silloin palveluntarjoajamme <a href="https://supabase.com" target="_blank" rel="noopener">Supabasen</a>
+    palvelimille, ja Supabase toimii henkilötietojen käsittelijänämme; palvelimet sijaitsevat Lontoossa
+    (Yhdistynyt kuningaskunta, maa, jota koskee EU:n päätös tietosuojan riittävyydestä). Vain laitteet,
+    jotka ovat <strong>liittyneet ryhmään</strong> sen kutsukoodilla tai -linkillä, voivat lukea tai
+    muuttaa sitä; pelkkä koodi näyttää ennen liittymistä vain ryhmän nimen ja jäsenten määrän. Jos
+    väärää koodia yritetään 20 kertaa tunnin sisällä, uudet yritykset estetään joksikin aikaa.</p>
+    <table>
+      <tr><th>Tiedot</th><th>Tarkoitus</th></tr>
+      <tr><td>Ryhmän nimi, valuutta, valinnainen budjetti, valinnaiset työmatka-asetukset</td><td>Ryhmän perustoiminnot</td></tr>
+      <tr><td>Ryhmän sijainti (paikan nimi ja koordinaatit), vain jos asetat sellaisen</td><td>Matkan sään näyttäminen — katso kohta 4</td></tr>
+      <tr><td>Jäsenten nimet, valinnainen profiilikuva</td><td>Näyttää, kuka maksoi ja kuka on velkaa kenelle</td></tr>
+      <tr><td>Jäsenen valinnaiset maksutavat: maksulinkit (esim. PayPal, Revolut, Wise), IBAN tai maksusovelluksen puhelinnumero (esim. Bizum, MB WAY, BLIK, Swish, Vipps, MobilePay)</td><td>Jotta muut ryhmässä voivat maksaa sinulle suoraan takaisin</td></tr>
+      <tr><td>Jäsenen push-tunnus ja sovelluksen kieli</td><td>Ilmoitukset omalla kielelläsi — katso kohta 5</td></tr>
+      <tr><td>Kulut: kuvaus, summa, kuka maksoi, kuka on velkaa mitäkin, kategoria, päivämäärä, valinnainen muistiinpano, valinnainen paikka ja koordinaatit</td><td>Kulujen jakamisen perustoiminto</td></tr>
+      <tr><td>Valinnainen kuittikuva kulua kohden, ryhmän kansikuva</td><td>Ostotodiste, ryhmän kuva; tekoäly voi myös lukea kuitin — katso kohta 3</td></tr>
+      <tr><td>Maksumuistutukset (kuka muistutti ketä, summa, ajankohta)</td><td>Muistutusilmoituksen lähettäminen</td></tr>
+      <tr><td>Jokaisen liittyneen laitteen anonyymi tunniste ja milloin sitä viimeksi käytettiin</td><td>Sen ratkaiseminen, mitkä laitteet saavat avata ryhmän</td></tr>
+    </table>
+    <p>Kuvat tallennetaan pitkän, arvaamattoman verkkolinkin taakse. Kuka tahansa, jolla on juuri se
+    linkki, voi avata kuvan, joten jaa tällaisia linkkejä vain ihmisille, joihin luotat.</p>
+
+    <h2>3. Tekoälyä hyödyntävät toiminnot (Anthropic)</h2>
+    <p>Kaksi valinnaista toimintoa lähettää tietoja <a href="https://www.anthropic.com" target="_blank" rel="noopener">Anthropicille</a>
+    (Clauden kehittäjä), yhdysvaltalaiselle tekoälypalvelun tarjoajalle, vain tuloksen tuottamiseksi
+    sinulle — ei koskaan mainontaa tai profilointia varten:</p>
+    <ul>
+      <li><strong>Kuitin skannaus:</strong> valitsemasi kuva lähetetään, jotta siitä voidaan lukea summa,
+      päivämäärä ja kaupan nimi. Tulos on vain ehdotus, jonka tarkistat ennen tallentamista.</li>
+      <li><strong>Matkan yhteenveto:</strong> ryhmän nimi, loppusummat, päivien ja kulujen määrä, suurin
+      kategoria, eniten maksaneen henkilön nimi ja summa sekä suurimman kulun kuvaus ja summa lähetetään
+      lyhyen yhteenvedon kirjoittamista varten. Kuvia ei lähetetä.</li>
+    </ul>
+    <p>Molemmat toiminnot ovat vapaaehtoisia; Fair toimii täysin ilman niitä. Väärinkäytön estämiseksi
+    käyttökerrat lasketaan päivittäin anonyymin laitetunnisteen mukaan (tai, jos sitä ei ole,
+    IP-osoitteen mukaan). Tähän liittyy tietojen siirto Yhdysvaltoihin, ja siirto perustuu Anthropicin
+    tietojenkäsittelyehtoihin, jotka sisältävät EU:n vakiosopimuslausekkeet. Anthropic ei käytä sen
+    rajapinnan (API) kautta lähetettyjä tietoja mallejensa kouluttamiseen.</p>
+
+    <h2>4. Sää, kartat ja paikat</h2>
+    <p>Jos asetat ryhmälle tai kululle paikan, Fair lähettää kirjoittamasi paikan nimen tai koordinaatit
+    <a href="https://open-meteo.com" target="_blank" rel="noopener">Open-Meteolle</a> paikan
+    löytämiseksi ja nykyisen sään näyttämiseksi. Paikan etsimisessä nykyisen sijaintisi perusteella ja
+    kulujen näyttämisessä kartalla käytetään iPhonesi Applen sijainti- ja karttapalveluja. Sijaintiasi
+    käytetään vain luvallasi, kun lisäät paikan itse; Fair ei koskaan seuraa sijaintiasi taustalla.</p>
+
+    <h2>5. Push-ilmoitukset (Expo)</h2>
+    <p>Jos sallit ilmoitukset, laitteesi push-tunnus tallennetaan (katso kohta 2), ja sitä käytetään
+    Expon push-palvelun ja Applen ilmoituspalvelun kautta kertomaan sinulle uusista kuluista ja
+    maksumuistutuksista synkronoidussa ryhmässä. Ilmoituksen toimittamiseksi sen teksti välitetään näille
+    palveluille: ryhmän nimi, maksaneen tai muistutuksen lähettäneen henkilön nimi, kulun kuvaus ja
+    summa.</p>
+
+    <h2>6. Valuuttamuunnos (Frankfurter)</h2>
+    <p>Jos kulu on eri valuutassa kuin ryhmän valuutta, Fair hakee vaihtokurssin
+    <a href="https://frankfurter.app" target="_blank" rel="noopener">Frankfurterista</a>, joka on
+    julkinen valuuttakurssipalvelu. Vain kaksi valuuttakoodia lähetetään (esim. ”EUR” ja ”USD”).</p>
+
+    <h2>7. Kaatumis- ja virheraportit (Sentry)</h2>
+    <p>Fair käyttää <a href="https://sentry.io" target="_blank" rel="noopener">Sentryä</a> kaatumisten
+    ja virheiden havaitsemiseen, jotta ne voidaan korjata. Se on määritetty niin, ettei se lähetä
+    henkilötietoja: ei käyttäjätunnistetta, ei oletusarvoisia henkilötietoja, ja IBAN-numerot,
+    sähköpostiosoitteet ja kutsukoodit peitetään ennen raportin lähettämistä. Raportti sisältää teknisiä
+    tietoja, kuten suoritettavana olleen koodin ja laitteen mallin.</p>
+
+    <h2>8. Kielitilastot ja käännösehdotukset</h2>
+    <p>Nähdäkseen, toimiiko kukin sovelluksen kieli hyvin, Fair laskee kielikohtaisesti muutamia
+    anonyymeja tapahtumia, esimerkiksi ”käyttöönotto suoritettu” tai ”vaihdettu englantiin”. Vain päivä,
+    kieli, tapahtuma ja lukumäärä tallennetaan — ei käyttäjää, laitetta eikä ryhmää. Jos käytät kohtaa
+    <strong>Asetukset → Kieli → Improve Translation</strong>, Fair lähettää kielen, valitsemasi tekstin,
+    ehdotuksesi ja valinnaisen muistiinpanosi yhdessä anonyymin laitetunnisteen kanssa (vain sen
+    laskemiseksi, kuinka moni eri henkilö ehdottaa samaa muutosta, ja väärinkäytön rajoittamiseksi).
+    Ehdotukset poistetaan viimeistään 180 päivän kuluttua.</p>
+
+    <h2>9. Kuinka kauan tietoja säilytetään</h2>
+    <ul>
+      <li>Laitteellasi olevat tiedot: kunnes poistat ne, käytät toimintoa ”Poista kaikki tiedot” tai poistat sovelluksen.</li>
+      <li>Synkronoitujen ryhmien tiedot: niin kauan kuin ryhmä on olemassa. Kun poistat ryhmän sovelluksessa,
+      ryhmä, sen jäsenet, kulut ja muistutukset poistetaan palvelimeltamme. Kuvat ovat saatavilla linkkinsä
+      kautta, kunnes poistamme ne; kerro meille, niin poistamme ne.</li>
+      <li>Kun poistut ryhmästä, laitteesi käyttöoikeus ja push-tunnuksesi poistetaan; jäsentietosi (nimi,
+      kuva, maksutavat) jäävät ryhmään, jotta muiden saldot pysyvät oikeina. Kerro meille, jos haluat, että
+      ne poistetaan tai anonymisoidaan.</li>
+      <li>Asetusten ”Poista kaikki tiedot” poistaa tiedot <strong>laitteeltasi</strong>. Se ei vielä poista
+      jäsentietojasi synkronoiduista ryhmistä palvelimeltamme; kirjoita meille, niin poistamme ne.</li>
+      <li>Luettelo vääristä kutsukoodeista poistetaan automaattisesti yhden päivän kuluttua, päivittäiset
+      tekoälyn käyttölaskurit 30 päivän kuluttua ja käännösehdotukset 180 päivän kuluttua.</li>
+    </ul>
+
+    <h2>10. Oikeutesi</h2>
+    <p>Sinulla on oikeus saada pääsy tietoihisi sekä oikeus tietojen oikaisemiseen, poistamiseen,
+    käsittelyn rajoittamiseen ja siirtämiseen järjestelmästä toiseen sekä oikeus vastustaa käsittelyä.
+    Useimpia tietoja hallitset itse suoraan sovelluksessa. Kaikissa muissa asioissa — esimerkiksi tiedot
+    ryhmässä, jota et enää voi avata — kirjoita osoitteeseen
+    <a href="mailto:litovchenko.alexanders3@gmail.com">litovchenko.alexanders3@gmail.com</a>; tämä on
+    yhden hengen projekti, joten pyynnöt käsitellään henkilökohtaisesti. Sinulla on myös oikeus tehdä
+    valitus tietosuojasta vastaavalle valvontaviranomaiselle, esimerkiksi oman maasi viranomaiselle.</p>
+
+    <h2>11. Lapset</h2>
+    <p>Fairia ei ole tarkoitettu alle 16-vuotiaille lapsille, eikä se tietoisesti kerää heidän tietojaan.</p>
+
+    <h2>12. Muutokset tähän selosteeseen</h2>
+    <p>Jos tämä seloste muuttuu merkittävästi, yllä oleva päivämäärä muuttuu, ja merkittävät muutokset
+    mainitaan sovelluksen uutisissa (Mitä uutta).</p>
+
+    <h2>Yhteystiedot</h2>
+    <p>Alexander Litovchenko — <a href="mailto:litovchenko.alexanders3@gmail.com">litovchenko.alexanders3@gmail.com</a></p>
+  </section>
+
   <hr>
-  <p class="muted" style="font-size: 13px;">This page is the Privacy Policy for the "Fair" iOS app (bundle ID com.alexanderlitovchenko.fair).</p>
+  <p class="muted" style="font-size: 13px;">This page is the Privacy Policy for the "Fair" iOS app (bundle ID com.alexanderlitovchenko.fair). The German version is the binding one.</p>
 </div>
+<noscript><style>section[lang="en"], section[lang="de"] { display: block; }</style></noscript>
+<script>
+(function () {
+  var codes = ["en", "de", "fr", "es", "it", "pt", "nl", "pl", "cs", "sv", "da", "nb", "fi"];
+  var pick = document.getElementById("lang");
+  function match(tag) {
+    tag = (tag || "").toLowerCase();
+    if (tag === "no" || tag === "nn" || tag.indexOf("no-") === 0 || tag.indexOf("nn-") === 0) return "nb";
+    var base = tag.split("-")[0];
+    return codes.indexOf(base) >= 0 ? base : null;
+  }
+  function show(code) {
+    var secs = document.querySelectorAll("section[lang]");
+    for (var i = 0; i < secs.length; i++) secs[i].classList.toggle("active", secs[i].getAttribute("lang") === code);
+    pick.value = code;
+    document.documentElement.lang = code;
+  }
+  var start = match(location.hash.slice(1));
+  if (!start) {
+    var prefs = navigator.languages || [navigator.language];
+    for (var i = 0; i < prefs.length && !start; i++) start = match(prefs[i]);
+  }
+  show(start || "en");
+  pick.addEventListener("change", function () { show(pick.value); history.replaceState(null, "", "#" + pick.value); });
+  window.addEventListener("hashchange", function () { var c = match(location.hash.slice(1)); if (c) show(c); });
+})();
+</script>
 </body>
 </html>
