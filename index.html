@@ -145,7 +145,7 @@
       largest category, the name and amount of the person who paid the most, and the description and
       amount of the largest expense are sent to write a short summary. No photos are sent.</li>
     </ul>
-    <p>Both features are optional; Fair works fully without them. To prevent abuse, the number of
+    <p>Both features are optional; Fair works fully without them. Before the first use, Fair asks for your permission and says what is sent to whom; you can withdraw it any time under Settings → AI. To prevent abuse, the number of
     uses per day is counted per anonymous device ID (or, without one, per IP address). This involves
     a transfer to the United States, covered by Anthropic's data processing terms, which include the EU
     standard contractual clauses. Anthropic does not use data sent through its API to train its
@@ -194,8 +194,13 @@
       <li>Leaving a group removes your device's access and push token; your member entry (name,
       photo, payment methods) stays in the group so the others' balances stay correct. Ask us if you
       want it removed or anonymized.</li>
-      <li>"Delete all data" in Settings deletes the data <strong>on your device</strong>. It does not
-      yet delete your member entries in synced groups on our backend; write to us and we delete them.</li>
+      <li>"Delete all data" in Settings deletes the data on your device and, right away, on our backend:
+      your member entries in synced groups lose your name, photo, payment methods and push token and are
+      shown as "Former member" (the expenses stay, so the others' balances stay correct); groups no other
+      device took part in are deleted with their photos; your anonymous device ID, its group access, AI
+      usage counters and translation suggestions are deleted. If you are offline, the App does this the
+      next time it reaches our backend. If our hosting provider keeps backups, deleted data disappears
+      from them when they expire (at most 7 days).</li>
       <li>The record of wrong invite codes is deleted automatically after one day, the daily AI usage
       counters after 30 days, translation suggestions after 180 days.</li>
     </ul>
@@ -285,7 +290,7 @@
       Betrag der größten Ausgabe werden gesendet, um eine kurze Zusammenfassung zu schreiben. Es werden
       keine Fotos gesendet.</li>
     </ul>
-    <p>Beide Funktionen sind freiwillig; Fair funktioniert vollständig ohne sie. Um Missbrauch zu
+    <p>Beide Funktionen sind freiwillig; Fair funktioniert vollständig ohne sie. Vor der ersten Nutzung fragt Fair um deine Erlaubnis und sagt, was an wen geht; du kannst sie jederzeit unter Einstellungen → KI zurücknehmen. Um Missbrauch zu
     verhindern, wird die Zahl der Nutzungen pro Tag je anonymer Gerätekennung gezählt (ohne Kennung je
     IP-Adresse). Dabei werden Daten in die USA übermittelt; das ist durch die Datenverarbeitungsbedingungen
     von Anthropic abgedeckt, die die EU-Standardvertragsklauseln enthalten. Anthropic verwendet Daten, die
@@ -337,9 +342,14 @@
       <li>Verlässt du eine Gruppe, werden der Zugang deines Geräts und dein Push-Token entfernt. Dein
       Mitgliedseintrag (Name, Foto, Zahlungsmethoden) bleibt in der Gruppe, damit die Salden der anderen
       stimmen. Schreib uns, wenn er entfernt oder anonymisiert werden soll.</li>
-      <li>„Alle Daten löschen“ in den Einstellungen löscht die Daten <strong>auf deinem Gerät</strong>. Deine
-      Mitgliedseinträge in synchronisierten Gruppen auf unserem Server löscht es noch nicht; schreib uns,
-      dann löschen wir sie.</li>
+      <li>„Alle Daten löschen“ in den Einstellungen löscht die Daten auf deinem Gerät und sofort auch auf
+      unserem Server: Deine Mitgliedseinträge in synchronisierten Gruppen verlieren Name, Foto,
+      Zahlungsmethoden und Push-Token und erscheinen als „Ehemaliges Mitglied“ (die Ausgaben bleiben,
+      damit die Salden der anderen stimmen); Gruppen, an denen kein anderes Gerät beteiligt war, werden
+      mit ihren Fotos gelöscht; deine anonyme Gerätekennung, ihr Gruppenzugang, die KI-Nutzungszähler und
+      Übersetzungsvorschläge werden gelöscht. Bist du offline, holt die App das beim nächsten Kontakt mit
+      unserem Server nach. Falls unser Hosting-Anbieter Sicherungskopien hält, verschwinden gelöschte Daten
+      daraus, sobald diese ablaufen (spätestens nach 7 Tagen).</li>
       <li>Die Liste falscher Einladungscodes wird nach einem Tag automatisch gelöscht, die täglichen
       KI-Nutzungszähler nach 30 Tagen, Übersetzungsvorschläge nach 180 Tagen.</li>
     </ul>
@@ -431,7 +441,7 @@
       ainsi que la description et le montant de la dépense la plus élevée sont envoyés pour rédiger un
       court résumé. Aucune photo n’est envoyée.</li>
     </ul>
-    <p>Ces deux fonctions sont facultatives ; Fair fonctionne entièrement sans elles. Pour éviter les
+    <p>Ces deux fonctions sont facultatives ; Fair fonctionne entièrement sans elles. Avant la première utilisation, Fair vous demande votre autorisation et indique ce qui est envoyé à qui ; vous pouvez la retirer à tout moment sous Réglages → IA. Pour éviter les
     abus, le nombre d’utilisations par jour est compté par identifiant anonyme d’appareil (ou, à défaut,
     par adresse IP). Cela implique un transfert vers les États-Unis, encadré par les conditions de
     traitement des données d’Anthropic, qui incluent les clauses contractuelles types de l’UE. Anthropic
@@ -484,9 +494,7 @@
       <li>Quitter un groupe supprime l’accès de votre appareil et votre jeton push ; votre fiche de membre
       (nom, photo, moyens de paiement) reste dans le groupe afin que les soldes des autres restent
       corrects. Écrivez-nous si vous souhaitez qu’elle soit supprimée ou anonymisée.</li>
-      <li>« Effacer toutes les données » dans les Réglages supprime les données <strong>sur votre
-      appareil</strong>. Cela ne supprime pas encore vos fiches de membre dans les groupes synchronisés sur
-      notre serveur ; écrivez-nous et nous les supprimerons.</li>
+      <li>« Effacer toutes les données » dans les Réglages supprime les données sur votre appareil et, immédiatement, sur notre serveur : vos fiches de membre dans les groupes synchronisés perdent votre nom, votre photo, vos moyens de paiement et votre jeton push et s’affichent comme « Ancien membre » (les dépenses restent, afin que les soldes des autres restent corrects) ; les groupes auxquels aucun autre appareil n’a participé sont supprimés avec leurs photos ; votre identifiant anonyme d’appareil, son accès aux groupes, les compteurs d’utilisation de l’IA et les suggestions de traduction sont supprimés. Si vous êtes hors ligne, l’App le fait la prochaine fois qu’elle joint notre serveur. Si notre hébergeur conserve des sauvegardes, les données supprimées en disparaissent à leur expiration (au maximum 7 jours).</li>
       <li>La liste des codes d’invitation erronés est supprimée automatiquement après un jour, les
       compteurs quotidiens d’utilisation de l’IA après 30 jours, les suggestions de traduction après
       180 jours.</li>
@@ -581,7 +589,7 @@
       descripción y el importe del gasto más alto, para redactar un breve resumen. No se envía ninguna
       foto.</li>
     </ul>
-    <p>Ambas funciones son opcionales; Fair funciona por completo sin ellas. Para evitar abusos, el
+    <p>Ambas funciones son opcionales; Fair funciona por completo sin ellas. Antes del primer uso, Fair te pide permiso y te dice qué se envía y a quién; puedes retirarlo en cualquier momento en Ajustes → IA. Para evitar abusos, el
     número de usos diarios se cuenta por identificador anónimo de dispositivo (o, si no lo hay, por
     dirección IP). Esto implica una transferencia a Estados Unidos, amparada por las condiciones de
     tratamiento de datos de Anthropic, que incluyen las cláusulas contractuales tipo de la UE. Anthropic
@@ -633,9 +641,7 @@
       <li>Al salir de un grupo se eliminan el acceso de tu dispositivo y tu token push; tu ficha de
       miembro (nombre, foto, métodos de pago) se queda en el grupo para que los saldos de los demás sigan
       siendo correctos. Escríbenos si quieres que se elimine o se anonimice.</li>
-      <li>«Eliminar todos los datos» en Ajustes borra los datos <strong>de tu dispositivo</strong>. Todavía
-      no borra tus fichas de miembro en los grupos sincronizados de nuestro servidor; escríbenos y las
-      eliminaremos.</li>
+      <li>«Eliminar todos los datos» en Ajustes borra los datos de tu dispositivo y, de inmediato, de nuestro servidor: tus fichas de miembro en los grupos sincronizados pierden tu nombre, foto, métodos de pago y token push y se muestran como «Antiguo miembro» (los gastos se quedan, para que los saldos de los demás sigan siendo correctos); los grupos en los que no participó ningún otro dispositivo se borran junto con sus fotos; se borran tu identificador anónimo de dispositivo, su acceso a los grupos, los contadores de uso de IA y las sugerencias de traducción. Si no tienes conexión, la App lo hace la próxima vez que se conecte a nuestro servidor. Si nuestro proveedor de servidor guarda copias de seguridad, los datos borrados desaparecen de ellas cuando caducan (como máximo, a los 7 días).</li>
       <li>El registro de códigos de invitación incorrectos se borra automáticamente al cabo de un día,
       los contadores diarios de uso de IA a los 30 días y las sugerencias de traducción a los 180 días.</li>
     </ul>
@@ -727,7 +733,7 @@
       della persona che ha pagato di più, e la descrizione e l’importo della spesa più alta. Non viene
       inviata alcuna foto.</li>
     </ul>
-    <p>Entrambe le funzioni sono facoltative; Fair funziona perfettamente anche senza. Per prevenire
+    <p>Entrambe le funzioni sono facoltative; Fair funziona perfettamente anche senza. Prima del primo utilizzo, Fair ti chiede il permesso e indica che cosa viene inviato e a chi; puoi revocarlo in qualsiasi momento in Impostazioni → IA. Per prevenire
     abusi, il numero di utilizzi giornalieri viene contato per identificativo anonimo del dispositivo
     (o, in sua assenza, per indirizzo IP). Ciò comporta un trasferimento verso gli Stati Uniti,
     disciplinato dalle condizioni di trattamento dei dati di Anthropic, che includono le clausole
@@ -779,9 +785,7 @@
       <li>Uscire da un gruppo rimuove l’accesso del tuo dispositivo e il tuo token push; la tua scheda
       membro (nome, foto, metodi di pagamento) resta nel gruppo, così i saldi degli altri restano
       corretti. Scrivici se vuoi che venga rimossa o resa anonima.</li>
-      <li>«Elimina tutti i dati» nelle Impostazioni elimina i dati <strong>sul tuo dispositivo</strong>.
-      Non elimina ancora le tue schede membro nei gruppi sincronizzati sul nostro server; scrivici e le
-      elimineremo.</li>
+      <li>«Elimina tutti i dati» nelle Impostazioni elimina i dati sul tuo dispositivo e, subito, sul nostro server: le tue schede membro nei gruppi sincronizzati perdono nome, foto, metodi di pagamento e token push e vengono mostrate come «Ex membro» (le spese restano, così i saldi degli altri restano corretti); i gruppi a cui non ha partecipato nessun altro dispositivo vengono eliminati insieme alle loro foto; vengono eliminati il tuo identificativo anonimo del dispositivo, il suo accesso ai gruppi, i contatori di utilizzo dell’IA e i suggerimenti di traduzione. Se sei offline, l’App lo fa la prossima volta che raggiunge il nostro server. Se il nostro fornitore di server conserva copie di backup, i dati eliminati ne scompaiono alla loro scadenza (al massimo dopo 7 giorni).</li>
       <li>L’elenco dei codici di invito errati viene eliminato automaticamente dopo un giorno, i contatori
       giornalieri di utilizzo dell’IA dopo 30 giorni, i suggerimenti di traduzione dopo 180 giorni.</li>
     </ul>
@@ -872,7 +876,7 @@
       os totais, o número de dias e de despesas, a categoria principal, o nome e o montante da pessoa que
       mais pagou, e a descrição e o montante da maior despesa. Não é enviada nenhuma foto.</li>
     </ul>
-    <p>Ambas as funcionalidades são opcionais; a Fair funciona plenamente sem elas. Para evitar abusos, o
+    <p>Ambas as funcionalidades são opcionais; a Fair funciona plenamente sem elas. Antes da primeira utilização, a Fair pede a sua autorização e indica o que é enviado e a quem; pode retirá-la a qualquer momento em Definições → IA. Para evitar abusos, o
     número de utilizações por dia é contado por identificador anónimo do dispositivo (ou, na falta deste,
     por endereço IP). Isto implica uma transferência para os Estados Unidos, abrangida pelos termos de
     tratamento de dados da Anthropic, que incluem as cláusulas contratuais-tipo da UE. A Anthropic não
@@ -923,9 +927,7 @@
       <li>Sair de um grupo remove o acesso do seu dispositivo e o seu token push; a sua ficha de membro
       (nome, foto, métodos de pagamento) fica no grupo para que os saldos dos outros continuem corretos.
       Escreva-nos se quiser que seja removida ou anonimizada.</li>
-      <li>«Apagar todos os dados» nas Definições apaga os dados <strong>no seu dispositivo</strong>. Ainda
-      não apaga as suas fichas de membro nos grupos sincronizados no nosso servidor; escreva-nos e nós
-      apagamo-las.</li>
+      <li>«Apagar todos os dados» nas Definições apaga os dados no seu dispositivo e, de imediato, no nosso servidor: as suas fichas de membro nos grupos sincronizados perdem o seu nome, foto, métodos de pagamento e token push e passam a ser mostradas como «Antigo membro» (as despesas ficam, para que os saldos dos outros continuem corretos); os grupos em que nenhum outro dispositivo participou são apagados com as respetivas fotos; o seu identificador anónimo do dispositivo, o respetivo acesso aos grupos, os contadores de utilização da IA e as sugestões de tradução são apagados. Se estiver offline, a App fá-lo da próxima vez que contactar o nosso servidor. Se o nosso fornecedor de servidor mantiver cópias de segurança, os dados apagados desaparecem delas quando estas expiram (no máximo, ao fim de 7 dias).</li>
       <li>O registo de códigos de convite errados é apagado automaticamente ao fim de um dia, os
       contadores diários de utilização da IA ao fim de 30 dias e as sugestões de tradução ao fim de
       180 dias.</li>
@@ -1019,7 +1021,7 @@
       bedrag van de grootste uitgave worden verstuurd om een korte samenvatting te schrijven. Er worden geen
       foto's verstuurd.</li>
     </ul>
-    <p>Beide functies zijn vrijwillig; Fair werkt volledig zonder. Om misbruik te voorkomen, wordt het
+    <p>Beide functies zijn vrijwillig; Fair werkt volledig zonder. Voor het eerste gebruik vraagt Fair je toestemming en zegt het wat er naar wie gaat; je kunt die altijd intrekken via Instellingen → AI. Om misbruik te voorkomen, wordt het
     aantal keren gebruik per dag geteld per anonieme apparaat-ID (of, zonder ID, per IP-adres). Hierbij
     worden gegevens doorgegeven naar de Verenigde Staten; dat valt onder de voorwaarden voor
     gegevensverwerking van Anthropic, die de standaardbepalingen inzake gegevensbescherming van de EU
@@ -1070,9 +1072,7 @@
       <li>Als je een groep verlaat, worden de toegang van je apparaat en je pushtoken verwijderd. Je
       ledenvermelding (naam, foto, betaalmethoden) blijft in de groep, zodat de saldi van de anderen kloppen.
       Mail ons als je wilt dat die wordt verwijderd of geanonimiseerd.</li>
-      <li>„Alle gegevens verwijderen” in Instellingen verwijdert de gegevens <strong>op je apparaat</strong>.
-      Je ledenvermeldingen in gesynchroniseerde groepen op onze server worden daarmee nog niet verwijderd;
-      mail ons, dan verwijderen wij ze.</li>
+      <li>„Alle gegevens verwijderen” in Instellingen verwijdert de gegevens op je apparaat en meteen ook op onze server: je ledenvermeldingen in gesynchroniseerde groepen verliezen je naam, foto, betaalmethoden en pushtoken en worden getoond als „Voormalig lid” (de uitgaven blijven staan, zodat de saldi van de anderen kloppen); groepen waaraan geen ander apparaat heeft deelgenomen, worden met hun foto’s verwijderd; je anonieme apparaat-ID, de groepstoegang daarvan, de AI-gebruikstellers en vertaalsuggesties worden verwijderd. Ben je offline, dan doet de app dit de volgende keer dat hij onze server bereikt. Als onze serverprovider back-ups bewaart, verdwijnen verwijderde gegevens daaruit zodra die verlopen (uiterlijk na 7 dagen).</li>
       <li>De lijst met foute uitnodigingscodes wordt na één dag automatisch verwijderd, de dagelijkse
       AI-gebruikstellers na 30 dagen, vertaalsuggesties na 180 dagen.</li>
     </ul>
@@ -1163,7 +1163,7 @@
       największa kategoria, imię i kwota osoby, która zapłaciła najwięcej, oraz opis i kwota największego
       wydatku, aby napisać krótkie podsumowanie. Żadne zdjęcia nie są wysyłane.</li>
     </ul>
-    <p>Obie funkcje są dobrowolne; Fair w pełni działa bez nich. Aby zapobiegać nadużyciom, liczba użyć
+    <p>Obie funkcje są dobrowolne; Fair w pełni działa bez nich. Przed pierwszym użyciem Fair prosi cię o zgodę i informuje, co i do kogo jest wysyłane; zgodę możesz w każdej chwili wycofać w menu Ustawienia → AI. Aby zapobiegać nadużyciom, liczba użyć
     dziennie jest liczona dla każdego anonimowego identyfikatora urządzenia (a bez niego — dla każdego
     adresu IP). Wiąże się to z przekazaniem danych do Stanów Zjednoczonych, objętym warunkami przetwarzania
     danych Anthropic, które zawierają standardowe klauzule umowne UE. Anthropic nie wykorzystuje danych
@@ -1214,9 +1214,7 @@
       <li>Opuszczenie grupy usuwa dostęp twojego urządzenia i twój token push. Twój wpis członka (imię,
       zdjęcie, metody płatności) pozostaje w grupie, aby salda pozostałych osób się zgadzały. Napisz do nas,
       jeśli chcesz, aby został usunięty lub zanonimizowany.</li>
-      <li>„Usuń wszystkie dane” w Ustawieniach usuwa dane <strong>na twoim urządzeniu</strong>. Nie usuwa
-      jeszcze twoich wpisów członka w zsynchronizowanych grupach na naszym serwerze; napisz do nas, a je
-      usuniemy.</li>
+      <li>„Usuń wszystkie dane” w Ustawieniach usuwa dane na twoim urządzeniu i od razu także na naszym serwerze: twoje wpisy członka w zsynchronizowanych grupach tracą imię, zdjęcie, metody płatności i token push i są wyświetlane jako „Były członek” (wydatki pozostają, aby salda pozostałych osób się zgadzały); grupy, w których nie uczestniczyło żadne inne urządzenie, są usuwane wraz ze zdjęciami; twój anonimowy identyfikator urządzenia, jego dostęp do grup, liczniki użycia AI i propozycje tłumaczeń są usuwane. Jeśli jesteś offline, Aplikacja zrobi to przy następnym połączeniu z naszym serwerem. Jeśli nasz dostawca serwerów przechowuje kopie zapasowe, usunięte dane znikają z nich, gdy kopie te wygasną (najpóźniej po 7 dniach).</li>
       <li>Lista błędnych kodów zaproszeń jest automatycznie usuwana po jednym dniu, dzienne liczniki
       użycia AI po 30 dniach, propozycje tłumaczeń po 180 dniach.</li>
     </ul>
@@ -1307,7 +1305,7 @@
       kategorie, jméno a částka osoby, která zaplatila nejvíc, a popis a částka největšího výdaje, aby
       vzniklo krátké shrnutí. Žádné fotky se neodesílají.</li>
     </ul>
-    <p>Obě funkce jsou dobrovolné; Fair bez nich plně funguje. Aby se zabránilo zneužití, počítá se počet
+    <p>Obě funkce jsou dobrovolné; Fair bez nich plně funguje. Před prvním použitím tě Fair požádá o svolení a řekne, co se komu posílá; svolení můžeš kdykoli odvolat v Nastavení → AI. Aby se zabránilo zneužití, počítá se počet
     použití za den pro každý anonymní identifikátor zařízení (bez něj pro každou IP adresu). Zahrnuje to
     předání údajů do Spojených států, na které se vztahují podmínky zpracování údajů společnosti
     Anthropic, jež obsahují standardní smluvní doložky EU. Anthropic nepoužívá údaje odeslané přes své
@@ -1356,8 +1354,7 @@
       <li>Opuštěním skupiny se odstraní přístup tvého zařízení a tvůj push token. Tvůj členský záznam
       (jméno, fotka, platební metody) zůstane ve skupině, aby zůstatky ostatních zůstaly správné. Napiš
       nám, pokud chceš, aby byl odstraněn nebo anonymizován.</li>
-      <li>„Smazat všechna data“ v Nastavení smaže údaje <strong>ve tvém zařízení</strong>. Tvé členské
-      záznamy v synchronizovaných skupinách na našem serveru zatím nesmaže; napiš nám a smažeme je.</li>
+      <li>„Smazat všechna data“ v Nastavení smaže údaje ve tvém zařízení a hned i na našem serveru: tvé členské záznamy v synchronizovaných skupinách přijdou o jméno, fotku, platební metody a push token a zobrazí se jako „Bývalý člen“ (výdaje zůstanou, aby zůstatky ostatních zůstaly správné); skupiny, kterých se neúčastnilo žádné jiné zařízení, se smažou i s fotkami; smaže se tvůj anonymní identifikátor zařízení, jeho přístup ke skupinám, počítadla použití AI a návrhy překladů. Pokud jsi offline, aplikace to udělá, až se příště spojí s naším serverem. Pokud náš poskytovatel serverů uchovává zálohy, smazané údaje z nich zmizí, jakmile zálohy vyprší (nejpozději po 7 dnech).</li>
       <li>Záznam chybných kódů pozvánek se automaticky smaže po jednom dni, denní počítadla použití AI po
       30 dnech, návrhy překladů po 180 dnech.</li>
     </ul>
@@ -1445,7 +1442,7 @@
       största kategorin, namnet och beloppet för den person som betalade mest samt beskrivningen och
       beloppet för den största utgiften skickas för att skriva en kort sammanfattning. Inga foton skickas.</li>
     </ul>
-    <p>Båda funktionerna är frivilliga; Fair fungerar fullt ut utan dem. För att förhindra missbruk räknas
+    <p>Båda funktionerna är frivilliga; Fair fungerar fullt ut utan dem. Före första användningen ber Fair om ditt tillstånd och berättar vad som skickas till vem; du kan när som helst återkalla det under Inställningar → AI. För att förhindra missbruk räknas
     antalet användningar per dag per anonymt enhets-ID (eller, om sådant saknas, per IP-adress). Detta
     innebär en överföring till USA, som omfattas av Anthropics villkor för databehandling, vilka innehåller
     EU:s standardavtalsklausuler. Anthropic använder inte uppgifter som skickas via dess API för att träna
@@ -1495,8 +1492,7 @@
       <li>När du lämnar en grupp tas din enhets åtkomst och push-token bort; din medlemspost (namn, foto,
       betalningssätt) finns kvar i gruppen så att de andras saldon fortsätter att stämma. Hör av dig om du
       vill att den tas bort eller anonymiseras.</li>
-      <li>”Radera all data” i Inställningar raderar uppgifterna <strong>på din enhet</strong>. Det raderar
-      ännu inte dina medlemsposter i synkroniserade grupper på vår server; skriv till oss så raderar vi dem.</li>
+      <li>”Radera all data” i Inställningar raderar uppgifterna på din enhet och direkt även på vår server: dina medlemsposter i synkroniserade grupper förlorar ditt namn, foto, betalningssätt och push-token och visas som ”Tidigare medlem” (utgifterna finns kvar så att de andras saldon fortsätter att stämma); grupper som ingen annan enhet har deltagit i raderas tillsammans med sina foton; ditt anonyma enhets-ID, dess gruppåtkomst, AI-användningsräknarna och översättningsförslagen raderas. Om du är offline gör appen detta nästa gång den når vår server. Om vår serverleverantör har säkerhetskopior försvinner raderade uppgifter ur dem när de löper ut (senast efter 7 dagar).</li>
       <li>Listan över felaktiga inbjudningskoder raderas automatiskt efter en dag, de dagliga
       AI-användningsräknarna efter 30 dagar och översättningsförslag efter 180 dagar.</li>
     </ul>
@@ -1584,7 +1580,7 @@
       største kategori, navn og beløb for den person, der har betalt mest, samt beskrivelse og beløb for
       den største udgift sendes for at skrive en kort opsummering. Der sendes ingen fotos.</li>
     </ul>
-    <p>Begge funktioner er frivillige; Fair fungerer fuldt ud uden dem. For at forhindre misbrug tælles
+    <p>Begge funktioner er frivillige; Fair fungerer fuldt ud uden dem. Før første brug beder Fair om din tilladelse og fortæller, hvad der sendes til hvem; du kan til enhver tid trække den tilbage under Indstillinger → AI. For at forhindre misbrug tælles
     antallet af brug pr. dag pr. anonymt enheds-ID (eller, hvis der ikke er et, pr. IP-adresse). Det
     indebærer en overførsel til USA, som er dækket af Anthropics vilkår for databehandling, der indeholder
     EU's standardkontraktbestemmelser. Anthropic bruger ikke oplysninger, der sendes via deres API, til at
@@ -1634,8 +1630,7 @@
       <li>Forlader du en gruppe, fjernes din enheds adgang og dit push-token; din medlemspost (navn, foto,
       betalingsmetoder) bliver i gruppen, så de andres saldi stadig passer. Skriv til os, hvis du vil have
       den fjernet eller anonymiseret.</li>
-      <li>»Slet alle data« i Indstillinger sletter oplysningerne <strong>på din enhed</strong>. Det sletter
-      endnu ikke dine medlemsposter i synkroniserede grupper på vores server; skriv til os, så sletter vi dem.</li>
+      <li>»Slet alle data« i Indstillinger sletter oplysningerne på din enhed og straks også på vores server: dine medlemsposter i synkroniserede grupper mister dit navn, foto, betalingsmetoder og push-token og vises som »Tidligere medlem« (udgifterne bliver, så de andres saldi stadig passer); grupper, som ingen anden enhed har deltaget i, slettes sammen med deres fotos; dit anonyme enheds-ID, dets gruppeadgang, tællerne for AI-brug og forslagene til oversættelser slettes. Er du offline, gør appen det, næste gang den får forbindelse til vores server. Hvis vores serverudbyder opbevarer sikkerhedskopier, forsvinder slettede oplysninger fra dem, når de udløber (senest efter 7 dage).</li>
       <li>Listen over forkerte invitationskoder slettes automatisk efter en dag, de daglige tællere for
       AI-brug efter 30 dage og forslag til oversættelser efter 180 dage.</li>
     </ul>
@@ -1723,7 +1718,7 @@
       største kategorien, navnet og beløpet til personen som betalte mest, samt beskrivelsen og beløpet for
       den største utgiften sendes for å skrive et kort sammendrag. Ingen bilder sendes.</li>
     </ul>
-    <p>Begge funksjonene er frivillige; Fair fungerer fullt ut uten dem. For å hindre misbruk telles antall
+    <p>Begge funksjonene er frivillige; Fair fungerer fullt ut uten dem. Før første bruk ber Fair om tillatelsen din og sier hva som sendes til hvem; du kan når som helst trekke den tilbake under Innstillinger → KI. For å hindre misbruk telles antall
     bruk per dag per anonym enhets-ID (eller, uten en slik ID, per IP-adresse). Dette innebærer en
     overføring til USA, som er dekket av Anthropics vilkår for databehandling, som inneholder EUs
     standardkontraktsklausuler (standard personvernbestemmelser). Anthropic bruker ikke opplysninger som
@@ -1773,9 +1768,7 @@
       <li>Forlater du en gruppe, fjernes enhetens tilgang og push-tokenet ditt; medlemsoppføringen din (navn,
       bilde, betalingsmåter) blir værende i gruppen slik at de andres saldoer fortsatt stemmer. Gi oss
       beskjed hvis du vil at den skal fjernes eller anonymiseres.</li>
-      <li>«Slett alle data» i Innstillinger sletter opplysningene <strong>på enheten din</strong>. Den sletter
-      ennå ikke medlemsoppføringene dine i synkroniserte grupper på serveren vår; skriv til oss, så sletter vi
-      dem.</li>
+      <li>«Slett alle data» i Innstillinger sletter opplysningene på enheten din og med en gang også på serveren vår: medlemsoppføringene dine i synkroniserte grupper mister navn, bilde, betalingsmåter og push-token og vises som «Tidligere medlem» (utgiftene blir værende, slik at de andres saldoer fortsatt stemmer); grupper som ingen annen enhet har deltatt i, slettes sammen med bildene sine; den anonyme enhets-ID-en din, gruppetilgangen dens, tellerne for KI-bruk og forslagene til oversettelser slettes. Er du frakoblet, gjør appen dette neste gang den når serveren vår. Hvis serverleverandøren vår har sikkerhetskopier, forsvinner slettede opplysninger fra dem når de utløper (senest etter 7 dager).</li>
       <li>Listen over feil invitasjonskoder slettes automatisk etter én dag, de daglige tellerne for KI-bruk
       etter 30 dager og forslag til oversettelser etter 180 dager.</li>
     </ul>
@@ -1863,7 +1856,7 @@
       kategoria, eniten maksaneen henkilön nimi ja summa sekä suurimman kulun kuvaus ja summa lähetetään
       lyhyen yhteenvedon kirjoittamista varten. Kuvia ei lähetetä.</li>
     </ul>
-    <p>Molemmat toiminnot ovat vapaaehtoisia; Fair toimii täysin ilman niitä. Väärinkäytön estämiseksi
+    <p>Molemmat toiminnot ovat vapaaehtoisia; Fair toimii täysin ilman niitä. Ennen ensimmäistä käyttöä Fair pyytää lupaasi ja kertoo, mitä lähetetään kenelle; voit perua luvan milloin tahansa kohdassa Asetukset → Tekoäly. Väärinkäytön estämiseksi
     käyttökerrat lasketaan päivittäin anonyymin laitetunnisteen mukaan (tai, jos sitä ei ole,
     IP-osoitteen mukaan). Tähän liittyy tietojen siirto Yhdysvaltoihin, ja siirto perustuu Anthropicin
     tietojenkäsittelyehtoihin, jotka sisältävät EU:n vakiosopimuslausekkeet. Anthropic ei käytä sen
@@ -1913,8 +1906,7 @@
       <li>Kun poistut ryhmästä, laitteesi käyttöoikeus ja push-tunnuksesi poistetaan; jäsentietosi (nimi,
       kuva, maksutavat) jäävät ryhmään, jotta muiden saldot pysyvät oikeina. Kerro meille, jos haluat, että
       ne poistetaan tai anonymisoidaan.</li>
-      <li>Asetusten ”Poista kaikki tiedot” poistaa tiedot <strong>laitteeltasi</strong>. Se ei vielä poista
-      jäsentietojasi synkronoiduista ryhmistä palvelimeltamme; kirjoita meille, niin poistamme ne.</li>
+      <li>Asetusten ”Poista kaikki tiedot” poistaa tiedot laitteeltasi ja heti myös palvelimeltamme: synkronoitujen ryhmien jäsentiedoistasi poistetaan nimesi, kuvasi, maksutapasi ja push-tunnuksesi, ja ne näytetään nimellä ”Entinen jäsen” (kulut säilyvät, jotta muiden saldot pysyvät oikeina); ryhmät, joihin mikään muu laite ei ole osallistunut, poistetaan kuvineen; anonyymi laitetunnisteesi, sen ryhmäkäyttöoikeudet, tekoälyn käyttölaskurit ja käännösehdotukset poistetaan. Jos olet offline-tilassa, sovellus tekee tämän seuraavan kerran, kun se saa yhteyden palvelimeemme. Jos palveluntarjoajamme säilyttää varmuuskopioita, poistetut tiedot häviävät niistä, kun varmuuskopiot vanhenevat (viimeistään 7 päivän kuluttua).</li>
       <li>Luettelo vääristä kutsukoodeista poistetaan automaattisesti yhden päivän kuluttua, päivittäiset
       tekoälyn käyttölaskurit 30 päivän kuluttua ja käännösehdotukset 180 päivän kuluttua.</li>
     </ul>
